@@ -1,0 +1,96 @@
+{
+  "networks": {
+    "linea_testnet": {
+      "Semaphore": {
+        "address": "0xd9692F91DC89f14f4211fa07aD2Bd1E9aD99D953",
+        "explorer": "https://explorer.goerli.linea.build/address/0xd9692F91DC89f14f4211fa07aD2Bd1E9aD99D953"
+      },
+      "SemaphoreVeriefier": {
+        "address": "0xD594971cea3fb43Dd3d2De87C216ac2aCE320fc2",
+        "explorer": "https://explorer.goerli.linea.build/address/0xD594971cea3fb43Dd3d2De87C216ac2aCE320fc2"
+      },
+      "Reclaim": {
+        "address": "0xf223E215B2c9A2E5FE1B2971d5694684b2E734C1",
+        "explorer": "https://explorer.goerli.linea.build/address/0xf223E215B2c9A2E5FE1B2971d5694684b2E734C1"
+      },
+      "Router": {
+        "address": "0x0412a3Bfbd9871DB519e449aBeaa3CAE4E89eB4B",
+        "explorer": "https://explorer.goerli.linea.build/address/0x0412a3Bfbd9871DB519e449aBeaa3CAE4E89eB4B"
+      },
+      "AttestationRegistry": {
+        "address": "0x7A2B692c8c46715727ae8b2BFb6259a1A1113fA0",
+        "explorer": "https://explorer.goerli.linea.build/address/0x7A2B692c8c46715727ae8b2BFb6259a1A1113fA0"
+      },
+      "ModuleRegistry": {
+        "address": "0x4A79C4fBe6c2F849D0fD4da8c24214491BaF41cd",
+        "explorer": "https://explorer.goerli.linea.build/address/0x4A79C4fBe6c2F849D0fD4da8c24214491BaF41cd"
+      },
+      "PortalRegistry": {
+        "address": "0xB51FCb41fF11e0445600f63D8c38f955DcCB0B2c",
+        "explorer": "https://explorer.goerli.linea.build/address/0xB51FCb41fF11e0445600f63D8c38f955DcCB0B2c"
+      },
+      "SchemaRegistry": {
+        "address": "0xEbBbc3A976A81AE54938E09F297ab7313E00D6a5",
+        "explorer": "https://explorer.goerli.linea.build/address/0xEbBbc3A976A81AE54938E09F297ab7313E00D6a5"
+      },
+      "ReclaimPortal": {
+        "address": "0x798c6B325671E6bA13c03Cb8B208d708F58B0f39",
+        "explorer": "https://explorer.goerli.linea.build/address/0x798c6B325671E6bA13c03Cb8B208d708F58B0f39"
+      },
+      "UserMerkelizerModule": {
+        "address": "0xd1cdF9B236c0f56D20d90a7F8129D129e4cEb7DB",
+        "explorer": "https://explorer.goerli.linea.build/address/0xd1cdF9B236c0f56D20d90a7F8129D129e4cEb7DB"
+      }
+    },
+    "opt_goerli": {
+      "IncrementalBinaryTree": {
+        "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1"
+      },
+      "Pairing": {
+        "address": "0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C"
+      },
+      "SemaphoreVerifier": {
+        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0x93a9d327836A5279E835EF3147ac1fb54FBd726B"
+      },
+      "Semaphore": {
+        "address": "0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d"
+      },
+      "Reclaim": {
+        "address": "0xCc08210D8f15323104A629a925E4cc59D0fa2Fe1",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0xCc08210D8f15323104A629a925E4cc59D0fa2Fe1"
+      },
+      "Router": {
+        "address": "0x88319b0e62dC199e7f9A14C7972Fc061cFE67823",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0x88319b0e62dC199e7f9A14C7972Fc061cFE67823"
+      },
+      "AttestationRegistry": {
+        "address": "0x345aD20D8C6A84EE43d9713AEE17e0F1A0183571",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0x345aD20D8C6A84EE43d9713AEE17e0F1A0183571"
+      },
+      "ModuleRegistry": {
+        "address": "0x508071F5514992400C32F05783322E338ac79BA6",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0x508071F5514992400C32F05783322E338ac79BA6"
+      },
+      "PortalRegistry": {
+        "address": "0xE11a9f996c71Da1d856dCa0Ec82Af60c2786c2cf",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0xE11a9f996c71Da1d856dCa0Ec82Af60c2786c2cf"
+      },
+      "SchemaRegistry": {
+        "address": "0xD594971cea3fb43Dd3d2De87C216ac2aCE320fc2",
+        "explorer": "https://goerli-optimism.etherscan.io/address/0xD594971cea3fb43Dd3d2De87C216ac2aCE320fc2"
+      },
+      "ReclaimPortal": {
+        "address": "0x8A07917338d6b67735ED65a6106FF8C0ba488aBA",
+        "explorer": ""
+      },
+      "UserMerkelizerModule": {
+        "address": "0xbd5EB413D84946256117fd7bE6F67e0EBb28146f",
+        "explorer": ""
+      }
+    }
+  }
+}
