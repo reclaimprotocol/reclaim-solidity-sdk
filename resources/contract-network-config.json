@@ -91,6 +91,32 @@
         "address": "0xbd5EB413D84946256117fd7bE6F67e0EBb28146f",
         "explorer": ""
       }
+    },
+    "polygon-mainnet": {
+      "IncrementalBinaryTree": {
+        "address": "0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d",
+        "explorer": "https://polygonscan.com/address/0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d"
+      },
+      "Pairing": {
+        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+        "explorer": "https://polygonscan.com/address/0x93a9d327836A5279E835EF3147ac1fb54FBd726B"
+      },
+      "SemaphoreVerifier": {
+        "address": "0x41488b9509d6A9143E9b022064D44743e63eD885",
+        "explorer": "https://polygonscan.com/address/0x41488b9509d6A9143E9b022064D44743e63eD885"
+      },
+      "Semaphore": {
+        "address": "0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5",
+        "explorer": "https://polygonscan.com/address/0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5"
+      },
+      "ReclaimProxy": {
+        "address": "0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7",
+        "explorer": "https://polygonscan.com/address/0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7"
+      },
+      "Reclaim": {
+        "address": "0xCc08210D8f15323104A629a925E4cc59D0fa2Fe1",
+        "explorer": "https://polygonscan.com/address/0xCc08210D8f15323104A629a925E4cc59D0fa2Fe1"
+      }
     }
   }
 }
