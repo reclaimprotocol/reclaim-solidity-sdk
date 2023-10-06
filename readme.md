@@ -179,12 +179,9 @@ Let’s imagine that you are building a DApp; your DApp will have two parts clie
          const contractAbi = [<YOUR_CONTRACT_ABI>]; // Replace with your contract's ABI
          const contract = new ethers.Contract(contractAddress, contractAbi, signer);
          try {
-
-          const tx = await contract.airDrop(data);
-
-              await tx.wait();
-              console.log('Transaction confirmed:', tx.hash);
-
+            const tx = await contract.airDrop(data);
+            await tx.wait();
+            console.log('Transaction confirmed:', tx.hash);
           } catch (error) {
           console.error('Error sending data:', error);
           }
