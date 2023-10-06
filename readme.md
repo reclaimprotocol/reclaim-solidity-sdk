@@ -173,8 +173,21 @@ Let’s imagine that you are building a DApp; your DApp will have two parts clie
        chainId: 420,
        onSuccess(data) {
          console.log('Successful - register prepare: ', data)
-         // todo : send data to your smart contract using :
-         // todo ethers example
+         const provider = new ethers.providers.JsonRpcProvider('<YOUR_JSON_RPC_URL>');
+         const signer = new ethers.Wallet('_KEY', provider);
+         const contractAddress = '<YOUR_CONTRACT_ADDRESS>';
+         const contractAbi = [<YOUR_CONTRACT_ABI>]; // Replace with your contract's ABI
+         const contract = new ethers.Contract(contractAddress, contractAbi, signer);
+         try {
+
+          const tx = await contract.airDrop(data);
+
+              await tx.wait();
+              console.log('Transaction confirmed:', tx.hash);
+
+          } catch (error) {
+          console.error('Error sending data:', error);
+          }
        },
        onError(error) {
          if (error.message.includes('AlreadyMerkelized')) {
