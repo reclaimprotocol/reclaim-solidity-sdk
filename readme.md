@@ -9,7 +9,17 @@ EVM smart contract that enables minting of credentials on-chain through a networ
 
 ## Contracts Addresses
 
-### Optimism Goerli
+### Mainnets
+
+#### Polygon
+| Contract          | Address                                    |
+| ----------------- | ------------------------------------------ |
+| Reclaim           | 0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7 |
+| Semaphore         | 0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5 |
+| SemaphoreVerifier | 0x41488b9509d6A9143E9b022064D44743e63eD885 |
+
+### Testnets
+#### Optimism Goerli
 
 | Contract          | Address                                    |
 | ----------------- | ------------------------------------------ |
@@ -17,7 +27,7 @@ EVM smart contract that enables minting of credentials on-chain through a networ
 | Semaphore         | 0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d |
 | SemaphoreVerifier | 0x93a9d327836A5279E835EF3147ac1fb54FBd726B |
 
-### Linea Testnet
+#### Linea Testnet
 
 | Contract          | Address                                    |
 | ----------------- | ------------------------------------------ |
