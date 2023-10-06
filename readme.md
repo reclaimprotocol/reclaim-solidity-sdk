@@ -12,6 +12,7 @@ EVM smart contract that enables minting of credentials on-chain through a networ
 ### Mainnets
 
 #### Polygon
+
 | Contract          | Address                                    |
 | ----------------- | ------------------------------------------ |
 | Reclaim           | 0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7 |
@@ -19,6 +20,7 @@ EVM smart contract that enables minting of credentials on-chain through a networ
 | SemaphoreVerifier | 0x41488b9509d6A9143E9b022064D44743e63eD885 |
 
 ### Testnets
+
 #### Optimism Goerli
 
 | Contract          | Address                                    |
@@ -65,31 +67,36 @@ Let’s imagine that you are building a DApp; your DApp will have two parts clie
 
 1. **Dapp Creation**
 
-   - dapp smart contract needs, in order to be up and running with Reclaim, to be registered in Reclaim using Reclaim.createDapp(uint256 externalNullifier). The Reclaim Contract emits a `DappCreated` event with the Dapp's unique identifier (dappId).
-     so the dapp admin may add the dapp to Reclaim as following:
+   - Your smart contract needs to be registered in Reclaim. Run the following script using to generate a DappId and Nullifier
+
+     - `npx hardhat register-dapp --dapp-name {dapp-name} --network {NETWORK} ` where the `{dapp-name}` is the name of the dapp and `{NETWORK}` is the chain, for example, "eth-goerli" or "polygon-mainnet"
 
      ```ts
-       import { task } from "hardhat/config";
-       import { getContractAddress } from "./utils";
-       import { Identity } from "@semaphore-protocol/identity"
+     import { task } from 'hardhat/config'
+     import { getContractAddress } from './utils'
+     import { Identity } from '@semaphore-protocol/identity'
 
-       task("register-dapp").setAction(async ({}, { ethers, upgrades, network }) => {
+     task('register-dapp')
+       .addParam('dappName', 'name of the dapp you want to register')
+       .setAction(async ({ dappName }, { ethers, upgrades, network }) => {
+         const dappIdentity = new Identity(dappName)
+         const { nullifier } = dappIdentity
 
-       const dappIdentity = new Identity(“dapp-name”)
-       const { nullifier } = dappIdentity
+         const reclaimFactory = await ethers.getContractFactory('Reclaim')
+         const contractAddress = getContractAddress(network.name, 'Reclaim')
+         const Reclaim = await reclaimFactory.attach(contractAddress)
 
-       const reclaimFactory = await ethers.getContractFactory("Reclaim");
-       const contractAddress = getContractAddress(network.name, "Reclaim");
-       const Reclaim = await reclaimFactory.attach(contractAddress);
+         const createDappTranactionResponse = await Reclaim.createDapp(
+           nullifier
+         )
 
-       const createDappTranactionResponse = await Reclaim.createDapp(nullifier);
+         const createDappTransactionReceipt =
+           await createDappTranactionResponse.wait()
 
-       const createDappTransactionReceipt = await createDappTranactionResponse.wait();
+         const dappId = createDappTransactionReceipt.events![0]!.args![0]!
 
-       const dappId = createDappTransactionReceipt.events![0]!.args![0]!;
-
-       console.log('External Nullifier:', nullifier);
-       console.log('Dapp Id:', dappId);
+         console.log('External Nullifier:', nullifier)
+         console.log('Dapp Id:', dappId)
        })
      ```
 
@@ -166,6 +173,8 @@ Let’s imagine that you are building a DApp; your DApp will have two parts clie
        chainId: 420,
        onSuccess(data) {
          console.log('Successful - register prepare: ', data)
+         // todo : send data to your smart contract using :
+         // todo ethers example
        },
        onError(error) {
          if (error.message.includes('AlreadyMerkelized')) {
