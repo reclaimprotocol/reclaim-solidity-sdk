@@ -46,7 +46,7 @@ const config: HardhatUserConfig = {
               ALCHEMY_API_KEY!
             ),
             // uncomment to make tx go faster
-            // gasPrice: 450000000000,
+            gasPrice: 450000000000,
             accounts: [PRIVATE_KEY]
           }
         }
@@ -59,7 +59,8 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: {
       linea_testnet: process.env.LINEASCAN_API_KEY || '',
-      optimisticGoerli: process.env.ETHERSCAN_API_KEY!
+      optimisticGoerli: process.env.ETHERSCAN_API_KEY!,
+      polygon: process.env.POLYGONSCAN_API_KEY!
     },
     customChains: [
       {
