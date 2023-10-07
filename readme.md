@@ -19,6 +19,14 @@ EVM smart contract that enables minting of credentials on-chain through a networ
 | Semaphore         | 0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5 |
 | SemaphoreVerifier | 0x41488b9509d6A9143E9b022064D44743e63eD885 |
 
+#### Arbitrum
+
+| Contract          | Address                                    |
+| ----------------- | ------------------------------------------ |
+| Reclaim           | 0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1 |
+| Semaphore         | 0x93a9d327836A5279E835EF3147ac1fb54FBd726B |
+| SemaphoreVerifier | 0x88cEd91D4966D82912774B9fdf9ca4E065881a91 |
+
 ### Testnets
 
 #### Optimism Goerli

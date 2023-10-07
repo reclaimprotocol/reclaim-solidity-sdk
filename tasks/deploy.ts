@@ -38,7 +38,7 @@ task('deploy').setAction(async ({}, { ethers, network, upgrades }) => {
   await verify(pairingAddress, network.name)
   await verify(semaphoreVerifierAddress, network.name)
   await verify(semaphore.address, network.name, [semaphoreVerifierAddress])
-  await verify(Reclaim.address, network.name, [semaphore.address])
+  await verify(Reclaim.address, network.name, [])
   networkDetails['IncrementalBinaryTree'] = {
     address: incrementalBinaryTreeAddress,
     explorer: ''
