@@ -42,53 +42,53 @@
         "explorer": "https://explorer.goerli.linea.build/address/0xd1cdF9B236c0f56D20d90a7F8129D129e4cEb7DB"
       }
     },
-    "opt_goerli": {
+    "opt-goerli": {
       "IncrementalBinaryTree": {
-        "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1"
+        "address": "0x75fA0F92fA3e5a99e8dD65007920a52f7CECdd5d",
+        "explorer": ""
       },
       "Pairing": {
-        "address": "0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C"
+        "address": "0x6D1E82F1A418163c739F203A942065fba86ef529",
+        "explorer": ""
       },
       "SemaphoreVerifier": {
-        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0x93a9d327836A5279E835EF3147ac1fb54FBd726B"
+        "address": "0x2C96f4227295cA6fA9eD80a4eC4fb11507da3367",
+        "explorer": ""
       },
       "Semaphore": {
-        "address": "0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d"
+        "address": "0x1B5C1e0DFfeae20716508F2B7AD5fA39ea52eb7e",
+        "explorer": ""
       },
       "Reclaim": {
-        "address": "0xCc08210D8f15323104A629a925E4cc59D0fa2Fe1",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0xCc08210D8f15323104A629a925E4cc59D0fa2Fe1"
+        "address": "0x2f0306D698685BEf7ff50745BFF7178F0d117ba8",
+        "explorer": ""
       },
       "Router": {
-        "address": "0x88319b0e62dC199e7f9A14C7972Fc061cFE67823",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0x88319b0e62dC199e7f9A14C7972Fc061cFE67823"
+        "address": "0x2C1fcAF923EcA3a587247bf6Ee00f01881509ff4",
+        "explorer": ""
       },
       "AttestationRegistry": {
-        "address": "0x345aD20D8C6A84EE43d9713AEE17e0F1A0183571",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0x345aD20D8C6A84EE43d9713AEE17e0F1A0183571"
+        "address": "0xBcfD2cf1c3ae17fDee5110fE31347839f06Dfe47",
+        "explorer": ""
       },
       "ModuleRegistry": {
-        "address": "0x508071F5514992400C32F05783322E338ac79BA6",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0x508071F5514992400C32F05783322E338ac79BA6"
+        "address": "0x1Da4C5359531930bE37e0Dd331f729Bb86505814",
+        "explorer": ""
       },
       "PortalRegistry": {
-        "address": "0xE11a9f996c71Da1d856dCa0Ec82Af60c2786c2cf",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0xE11a9f996c71Da1d856dCa0Ec82Af60c2786c2cf"
+        "address": "0xC29673d9a8b0Fba737E308309Fc7cb1d2f4457fC",
+        "explorer": ""
       },
       "SchemaRegistry": {
-        "address": "0xD594971cea3fb43Dd3d2De87C216ac2aCE320fc2",
-        "explorer": "https://goerli-optimism.etherscan.io/address/0xD594971cea3fb43Dd3d2De87C216ac2aCE320fc2"
+        "address": "0x54F16e695A3e1c737a62d5D7a17CF3CB41356383",
+        "explorer": ""
       },
       "ReclaimPortal": {
-        "address": "0x8A07917338d6b67735ED65a6106FF8C0ba488aBA",
+        "address": "0x5Da495e845f9242766AD97E8D09EAcc4004aBeDc",
         "explorer": ""
       },
       "UserMerkelizerModule": {
-        "address": "0xbd5EB413D84946256117fd7bE6F67e0EBb28146f",
+        "address": "0x7E1E9871b4251c0b5E9Eb6FEb64F5bfe5D228237",
         "explorer": ""
       }
     },
@@ -109,13 +109,9 @@
         "address": "0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5",
         "explorer": "https://polygonscan.com/address/0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5"
       },
-      "ReclaimProxy": {
+      "Reclaim": {
         "address": "0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7",
         "explorer": "https://polygonscan.com/address/0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7"
-      },
-      "Reclaim": {
-        "address": "0xCc08210D8f15323104A629a925E4cc59D0fa2Fe1",
-        "explorer": "https://polygonscan.com/address/0xCc08210D8f15323104A629a925E4cc59D0fa2Fe1"
       }
     },
     "arb-mainnet": {
@@ -135,13 +131,9 @@
         "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
         "explorer": "https://arbiscan.io/address/0x93a9d327836A5279E835EF3147ac1fb54FBd726B#code"
       },
-      "ReclaimProxy": {
+      "Reclaim": {
         "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
         "explorer": "https://arbiscan.io/address/0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1"
-      },
-      "Reclaim": {
-        "address": "0x41488b9509d6A9143E9b022064D44743e63eD885",
-        "explorer": "https://arbiscan.io/address/0x41488b9509d6A9143E9b022064D44743e63eD885"
       }
     },
     "opt-mainnet": {
@@ -161,13 +153,9 @@
         "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
         "explorer": "https://optimistic.etherscan.io/address/0x93a9d327836A5279E835EF3147ac1fb54FBd726B#code"
       },
-      "ReclaimProxy": {
+      "Reclaim": {
         "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
         "explorer": "https://optimistic.etherscan.io/address/0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1"
-      },
-      "Reclaim": {
-        "address": "0x41488b9509d6A9143E9b022064D44743e63eD885",
-        "explorer": "https://optimistic.etherscan.io/address/0x41488b9509d6A9143E9b022064D44743e63eD885"
       }
     }
   }
