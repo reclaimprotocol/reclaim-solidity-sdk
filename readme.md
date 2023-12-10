@@ -11,6 +11,13 @@ EVM smart contract that enables minting of credentials on-chain through a networ
 
 ### Mainnets
 
+#### Base
+
+| Contract          | Address                                    |
+| ----------------- | ------------------------------------------ |
+| Reclaim           | 0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d |
+| Semaphore         | 0x41488b9509d6A9143E9b022064D44743e63eD885 |
+| SemaphoreVerifier | 0xa15667CC95718465838F83fA4fC9B232da6dB2BB |
 
 #### BNB
 
@@ -19,7 +26,6 @@ EVM smart contract that enables minting of credentials on-chain through a networ
 | Reclaim           | 0x1bbb0896aC6F4E32a89157C73Fb830325a441cb9 |
 | Semaphore         | 0x60d26d3BE0c424Dc0dcC062DFB5bcB2DB07b961A |
 | SemaphoreVerifier | 0x8CDc031d5B7F148ab0435028B16c682c469CEfC3 |
-
 
 #### Polygon
 

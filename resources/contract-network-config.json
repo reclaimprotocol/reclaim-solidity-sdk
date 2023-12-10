@@ -1,6 +1,6 @@
 {
   "networks": {
-    "linea_testnet": {
+    "linea-goerli": {
       "Semaphore": {
         "address": "0xd9692F91DC89f14f4211fa07aD2Bd1E9aD99D953",
         "explorer": "https://explorer.goerli.linea.build/address/0xd9692F91DC89f14f4211fa07aD2Bd1E9aD99D953"
@@ -178,6 +178,50 @@
       "Reclaim": {
         "address": "0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7",
         "explorer": "https://mumbai.polygonscan.com/address/0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7"
+      }
+    },
+    "bsc": {
+      "IncrementalBinaryTree": {
+        "address": "0x1634F2866E3a561f12aF62A8297D20E61a5058f2",
+        "explorer": "https://bscscan.com/address/0x1634F2866E3a561f12aF62A8297D20E61a5058f2"
+      },
+      "Pairing": {
+        "address": "0x8eccfeF7f3A327483D6405B10Be87C2B31F76f6d",
+        "explorer": "https://bscscan.com/address/0x8eccfeF7f3A327483D6405B10Be87C2B31F76f6d"
+      },
+      "SemaphoreVerifier": {
+        "address": "0x8CDc031d5B7F148ab0435028B16c682c469CEfC3",
+        "explorer": "https://bscscan.com/address/0x8CDc031d5B7F148ab0435028B16c682c469CEfC3"
+      },
+      "Semaphore": {
+        "address": "0x60d26d3BE0c424Dc0dcC062DFB5bcB2DB07b961A",
+        "explorer": "https://bscscan.com/address/0x60d26d3BE0c424Dc0dcC062DFB5bcB2DB07b961A"
+      },
+      "Reclaim": {
+        "address": "0x1bbb0896aC6F4E32a89157C73Fb830325a441cb9",
+        "explorer": "https://bscscan.com/address/0x1bbb0896aC6F4E32a89157C73Fb830325a441cb9"
+      }
+    },
+    "base-mainnet": {
+      "IncrementalBinaryTree": {
+        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+        "explorer": "https://basescan.org/address/0x93a9d327836A5279E835EF3147ac1fb54FBd726B"
+      },
+      "Pairing": {
+        "address": "0x0E2CF8810B11c2875246d634f030897e77491680",
+        "explorer": "https://basescan.org/address/0x0E2CF8810B11c2875246d634f030897e77491680"
+      },
+      "SemaphoreVerifier": {
+        "address": "0xa15667CC95718465838F83fA4fC9B232da6dB2BB",
+        "explorer": "https://basescan.org/address/0xa15667CC95718465838F83fA4fC9B232da6dB2BB"
+      },
+      "Semaphore": {
+        "address": "0x41488b9509d6A9143E9b022064D44743e63eD885",
+        "explorer": "https://basescan.org/address/0x41488b9509d6A9143E9b022064D44743e63eD885"
+      },
+      "Reclaim": {
+        "address": "0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d",
+        "explorer": "https://basescan.org/address/0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d"
       }
     }
   }
