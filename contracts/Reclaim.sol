@@ -194,24 +194,48 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		return proof.claimInfo.provider;
 	}
 
-	/**
-	 * Get the context message from the proof
-	 */
-	function getContextMessageFromProof(
-		Proof memory proof
-	) external pure returns (string memory) {
-		string memory context = proof.claimInfo.context;
-		return StringUtils.substring(context, 42, bytes(context).length);
-	}
-
-	/**
-	 * Get the context address from the proof
-	 */
-	function getContextAddressFromProof(
-		Proof memory proof
+	function extractContextMessage(
+		string memory data,
+		string memory target
 	) public pure returns (string memory) {
-		string memory context = proof.claimInfo.context;
-		return StringUtils.substring(context, 0, 42);
+		bytes memory dataBytes = bytes(data);
+		// string memory target = '"contextMessage":"'; // Target string to find
+		bytes memory targetBytes = bytes(target);
+		uint start = 0;
+		bool foundStart = false;
+		// Find start of "contextMessage":"
+		for (uint i = 0; i <= dataBytes.length - targetBytes.length; i++) {
+			bool isMatch = true;
+			for (uint j = 0; j < targetBytes.length && isMatch; j++) {
+				if (dataBytes[i + j] != targetBytes[j]) {
+					isMatch = false;
+				}
+			}
+			if (isMatch) {
+				start = i + targetBytes.length; // Move start to the end of "contextMessage":"
+				foundStart = true;
+				break;
+			}
+		}
+		if (!foundStart) {
+			return ""; // Malformed or missing message
+		}
+		// Find the end of the message, assuming it ends with a quote not preceded by a backslash
+		uint end = start;
+		while (
+			end < dataBytes.length &&
+			!(dataBytes[end] == '"' && dataBytes[end - 1] != "\\")
+		) {
+			end++;
+		}
+		if (end <= start) {
+			return ""; // Malformed or missing message
+		}
+		bytes memory contextMessage = new bytes(end - start);
+		for (uint i = start; i < end; i++) {
+			contextMessage[i - start] = dataBytes[i];
+		}
+		return string(contextMessage);
 	}
 
 	function getMerkelizedUserParams(
