@@ -34,11 +34,7 @@ task('deploy').setAction(async ({}, { ethers, network, upgrades }) => {
   console.log('Reclaim Implementation deployed to:', res.events[0].args[0])
   console.log('Reclaim Proxy deployed to: ', Reclaim.address)
 
-  await verify(incrementalBinaryTreeAddress, network.name)
-  await verify(pairingAddress, network.name)
-  await verify(semaphoreVerifierAddress, network.name)
-  await verify(semaphore.address, network.name, [semaphoreVerifierAddress])
-  await verify(Reclaim.address, network.name, [])
+  
   networkDetails['IncrementalBinaryTree'] = {
     address: incrementalBinaryTreeAddress,
     explorer: ''
@@ -67,4 +63,11 @@ task('deploy').setAction(async ({}, { ethers, network, upgrades }) => {
     './resources/contract-network-config.json',
     JSON.stringify(content)
   )
+
+
+  await verify(incrementalBinaryTreeAddress, network.name)
+  await verify(pairingAddress, network.name)
+  await verify(semaphoreVerifierAddress, network.name)
+  await verify(semaphore.address, network.name, [semaphoreVerifierAddress])
+  await verify(Reclaim.address, network.name, [semaphore.address])
 })

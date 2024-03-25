@@ -5,10 +5,13 @@ import { HardhatUserConfig } from 'hardhat/config'
 import '@nomicfoundation/hardhat-toolbox'
 import '@openzeppelin/hardhat-upgrades'
 import '@semaphore-protocol/hardhat'
+
 import 'solidity-coverage'
 import './tasks'
+// import "@nomicfoundation/hardhat-verify";
 
-const { PRIVATE_KEY, ALCHEMY_API_KEY, NETWORK } = process.env
+const { PRIVATE_KEY, ALCHEMY_API_KEY, NETWORK, INFURA_API_KEY, PROVIDER } =
+  process.env
 const hasCustomNetwork = NETWORK && NETWORK !== 'hardhat'
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ''
 if (hasCustomNetwork) {
@@ -21,8 +24,22 @@ if (hasCustomNetwork) {
   }
 }
 
-const API_TEMPLATE = 'https://{{network}}.g.alchemy.com/v2/{{key}}'
+const API_TEMPLATE_ALCHEMY = 'https://{{network}}.g.alchemy.com/v2/{{key}}'
+const API_TEMPLATE_INFURA = 'https://{{network}}.infura.io/v3/{{key}}'
 
+let provider_url = ''
+
+if (PROVIDER === 'alchemy') {
+  provider_url = API_TEMPLATE_ALCHEMY.replace('{{network}}', NETWORK!).replace(
+    '{{key}}',
+    ALCHEMY_API_KEY!
+  )
+} else if (PROVIDER === 'infura') {
+  provider_url = API_TEMPLATE_INFURA.replace('{{network}}', NETWORK!).replace(
+    '{{key}}',
+    INFURA_API_KEY!
+  )
+}
 const config: HardhatUserConfig = {
   solidity: {
     version: '0.8.4',
@@ -41,10 +58,7 @@ const config: HardhatUserConfig = {
     ...(hasCustomNetwork
       ? {
           [NETWORK]: {
-            url: API_TEMPLATE.replace('{{network}}', NETWORK).replace(
-              '{{key}}',
-              ALCHEMY_API_KEY!
-            ),
+            url: provider_url,
             // uncomment to make tx go faster
             // gasPrice: 450000000000,
             accounts: [PRIVATE_KEY]
@@ -63,7 +77,8 @@ const config: HardhatUserConfig = {
       optimisticEthereum: process.env.ETHERSCAN_API_KEY!,
       polygon: process.env.POLYGONSCAN_API_KEY!,
       arbitrumOne: process.env.ARBISCAN_API_KEY!,
-      polygonMumbai: process.env.POLYGONSCAN_API_KEY!
+      polygonMumbai: process.env.POLYGONSCAN_API_KEY!,
+      'arbitrum-sepolia': process.env.ARBISCAN_API_KEY!
     },
     customChains: [
       {
@@ -80,6 +95,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: 'https://api-goerli-optimistic.etherscan.io/',
           browserURL: 'https://goerli-optimism.etherscan.io/'
+        }
+      },
+      {
+        network: 'arbitrum-sepolia',
+        chainId: 421614,
+        urls: {
+          apiURL: 'https://api-sepolia.arbiscan.io/api',
+          browserURL: 'https://sepolia.arbiscan.io/'
         }
       }
     ]

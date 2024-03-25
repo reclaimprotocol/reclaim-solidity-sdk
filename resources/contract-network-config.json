@@ -223,6 +223,7 @@
         "address": "0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d",
         "explorer": "https://basescan.org/address/0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d"
       }
-    }
+    },
+    "arbitrum-sepolia": {}
   }
 }
