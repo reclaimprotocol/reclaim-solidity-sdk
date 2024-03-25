@@ -224,6 +224,27 @@
         "explorer": "https://basescan.org/address/0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d"
       }
     },
-    "arbitrum-sepolia": {}
+    "arbitrum-sepolia": {
+      "IncrementalBinaryTree": {
+        "address": "0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "0x41488b9509d6A9143E9b022064D44743e63eD885",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7",
+        "explorer": ""
+      }
+    }
   }
 }
