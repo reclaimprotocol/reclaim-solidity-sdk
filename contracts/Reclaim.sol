@@ -194,7 +194,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		return proof.claimInfo.provider;
 	}
 
-	function extractContextMessage(
+	function extractFieldFromContext(
 		string memory data,
 		string memory target
 	) public pure returns (string memory) {
