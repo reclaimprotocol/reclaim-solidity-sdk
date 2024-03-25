@@ -89,25 +89,22 @@ describe('Reclaim Tests', () => {
       expect(result).to.equal(superProofs[0].claimInfo.provider)
     })
 
-    it('should return the context message from the proof', async () => {
-      let { contract, superProofs } = await loadFixture(proofsFixture)
-      const result = await contract.getContextMessageFromProof(superProofs[0])
-      let context = superProofs[0].claimInfo.context as string
-      expect(result).to.equal(context.substring(42, context.length))
+    it('should extract providerHash from context', async () => {
+      let { contract } = await loadFixture(proofsFixture)
+      const ctx = "{\"contextAddress\":\"0x00000000000\",\"contextMessage\":\"hi there\",\"providerHash\":\"0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e\"}"
+      const trgt = '"providerHash":"'
+      const hash = "0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"
+      const result = await contract.extractFieldFromContext(ctx, trgt)
+      expect(result).to.equal(hash)
     })
 
-    it('should return the context address from the proof', async () => {
-      let { contract, superProofs } = await loadFixture(proofsFixture)
-      const result = await contract.getContextAddressFromProof(superProofs[0])
-      let context = superProofs[0].claimInfo.context as string
-      expect(result).to.equal(context.substring(0, 42))
-    })
-
-    it('should return the context address from the proof', async () => {
-      let { contract, superProofs } = await loadFixture(proofsFixture)
-      const result = await contract.getContextAddressFromProof(superProofs[0])
-      let context = superProofs[0].claimInfo.context as string
-      expect(result).to.equal(context.substring(0, 42))
+    it('should extract contextMessage from context', async () => {
+      let { contract } = await loadFixture(proofsFixture)
+      const ctx = "{\"contextAddress\":\"0x00000000000\",\"contextMessage\":\"hi there\",\"providerHash\":\"0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e\"}"
+      const trgt = '"contextMessage":"'
+      const message = "hi there"
+      const result = await contract.extractFieldFromContext(ctx, trgt)
+      expect(result).to.equal(message)
     })
 
     it('should create unique groupId for each provider', async () => {
