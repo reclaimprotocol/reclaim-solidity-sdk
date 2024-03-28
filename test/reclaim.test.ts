@@ -205,7 +205,7 @@ describe('Reclaim Tests', () => {
       const member = identity.getCommitment().toString()
 
       let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
-      const tx = await contract.merkelizeUser(superProofs[1], member,providersHashes)
+      const tx = await contract.merkelizeUser(superProofs[1], member, providersHashes)
       expect(tx).to.emit(contract, 'GroupCreated')
     })
 
@@ -216,10 +216,10 @@ describe('Reclaim Tests', () => {
       const identity = new Identity()
       const member = identity.getCommitment().toString()
       let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
-      const tx = await contract.merkelizeUser(superProofs[1], member,providersHashes)
+      const tx = await contract.merkelizeUser(superProofs[1], member, providersHashes)
 
       await expect(
-        contract.merkelizeUser(superProofs[1], member,providersHashes)
+        contract.merkelizeUser(superProofs[1], member, providersHashes)
       ).to.be.revertedWithCustomError(
         contract,
         'Reclaim__UserAlreadyMerkelized'
@@ -240,7 +240,7 @@ describe('Reclaim Tests', () => {
       )
       const txReceipt = await tx.wait(1)
       let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
-      const txMerkelize = await contract.merkelizeUser(superProofs[1], member,providersHashes)
+      const txMerkelize = await contract.merkelizeUser(superProofs[1], member, providersHashes)
       await txMerkelize.wait()
 
       // get groupId from events
@@ -291,7 +291,7 @@ describe('Reclaim Tests', () => {
       superProofs[1].signedClaim.signatures = []
 
       let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
-      expect(contract.merkelizeUser(superProofs[1], member,providersHashes)).to.be.revertedWith(
+      expect(contract.merkelizeUser(superProofs[1], member, providersHashes)).to.be.revertedWith(
         'No signatures'
       )
     })

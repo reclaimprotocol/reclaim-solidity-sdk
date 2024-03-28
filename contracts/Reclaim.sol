@@ -198,17 +198,15 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		string memory data,
 		string memory target
 	) public pure returns (string memory) {
-
 		bytes memory dataBytes = bytes(data);
 		bytes memory targetBytes = bytes(target);
 
-		require(dataBytes.length >= targetBytes.length, "target is longer data");
+		require(dataBytes.length >= targetBytes.length, "target is longer than data");
 		uint start = 0;
 		bool foundStart = false;
 		// Find start of "contextMessage":"
-		
+
 		for (uint i = 0; i <= dataBytes.length - targetBytes.length; i++) {
-			
 			bool isMatch = true;
 
 			for (uint j = 0; j < targetBytes.length && isMatch; j++) {
@@ -222,7 +220,6 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 				foundStart = true;
 				break;
 			}
-
 		}
 
 		if (!foundStart) {
@@ -253,6 +250,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		bytes32 userParamsHash = calculateUserParamsHash(provider, params);
 		return merkelizedUserParams[userParamsHash];
 	}
+
 	/**
 	 * Call the function to assert
 	 * the validity of several claims proofs
@@ -295,7 +293,10 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		}
 
 		// @TODO: verify zkproof
-		string memory proofProviderHash =extractFieldFromContext(proof.claimInfo.context,'"providerHash":"');
+		string memory proofProviderHash = extractFieldFromContext(
+			proof.claimInfo.context,
+			'"providerHash":"'
+		);
 
 		for (uint256 i = 0; i < providersHahes.length; i++) {
 			if (StringUtils.areEqual(proofProviderHash, providersHahes[i])) {
@@ -325,7 +326,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	function merkelizeUser(
 		Proof memory proof,
 		uint256 _identityCommitment,
-		string[] memory providerHahes 
+		string[] memory providerHahes
 	) external noReentrant {
 		uint256 groupId = calculateGroupIdFromProvider(proof.claimInfo.provider);
 		bytes32 userParamsHash = calculateUserParamsHash(
