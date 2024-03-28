@@ -198,25 +198,33 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		string memory data,
 		string memory target
 	) public pure returns (string memory) {
+
 		bytes memory dataBytes = bytes(data);
-		// string memory target = '"contextMessage":"'; // Target string to find
 		bytes memory targetBytes = bytes(target);
+
+		require(dataBytes.length >= targetBytes.length, "target is longer data");
 		uint start = 0;
 		bool foundStart = false;
 		// Find start of "contextMessage":"
+		
 		for (uint i = 0; i <= dataBytes.length - targetBytes.length; i++) {
+			
 			bool isMatch = true;
+
 			for (uint j = 0; j < targetBytes.length && isMatch; j++) {
 				if (dataBytes[i + j] != targetBytes[j]) {
 					isMatch = false;
 				}
 			}
+
 			if (isMatch) {
 				start = i + targetBytes.length; // Move start to the end of "contextMessage":"
 				foundStart = true;
 				break;
 			}
+
 		}
+
 		if (!foundStart) {
 			return ""; // Malformed or missing message
 		}
@@ -245,12 +253,11 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		bytes32 userParamsHash = calculateUserParamsHash(provider, params);
 		return merkelizedUserParams[userParamsHash];
 	}
-
 	/**
 	 * Call the function to assert
 	 * the validity of several claims proofs
 	 */
-	function verifyProof(Proof memory proof) public view {
+	function verifyProof(Proof memory proof, string[] memory providersHahes) public view {
 		// create signed claim using claimData and signature.
 		require(proof.signedClaim.signatures.length > 0, "No signatures");
 		Claims.SignedClaim memory signed = Claims.SignedClaim(
@@ -287,7 +294,15 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 			require(found, "Signature not appropriate");
 		}
 
-		//@TODO: verify zkproof
+		// @TODO: verify zkproof
+		string memory proofProviderHash =extractFieldFromContext(proof.claimInfo.context,'"providerHash":"');
+
+		for (uint256 i = 0; i < providersHahes.length; i++) {
+			if (StringUtils.areEqual(proofProviderHash, providersHahes[i])) {
+				return;
+			}
+		}
+		revert("No valid providerHash");
 	}
 
 	function createGroup(
@@ -309,7 +324,8 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 
 	function merkelizeUser(
 		Proof memory proof,
-		uint256 _identityCommitment
+		uint256 _identityCommitment,
+		string[] memory providerHahes 
 	) external noReentrant {
 		uint256 groupId = calculateGroupIdFromProvider(proof.claimInfo.provider);
 		bytes32 userParamsHash = calculateUserParamsHash(
@@ -319,7 +335,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		if (merkelizedUserParams[userParamsHash] == true) {
 			revert Reclaim__UserAlreadyMerkelized();
 		}
-		verifyProof(proof);
+		verifyProof(proof, providerHahes);
 		if (createdGroups[groupId] != true) {
 			createGroup(proof.claimInfo.provider, 20);
 		}

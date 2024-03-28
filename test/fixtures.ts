@@ -52,7 +52,7 @@ export async function proofsFixture () {
   const createClaimInfo = contextAddress => {
     const provider = 'uid-dob'
     const parameters = '{"dob":"0000-00-00"}'
-    const context = contextAddress + 'some-application-specific-context'
+    const context = contextAddress + 'some-application-specific-context'+"\"providerHash\":\"0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e\""
     return { provider, parameters, context }
   }
 

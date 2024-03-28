@@ -33,7 +33,7 @@ describe('Reclaim Tests', () => {
     let { contract, witnesses } = await loadFixture(deployFixture)
     const NOT_OWNER_MSG = 'Ownable: caller is not the owner'
     const user = await randomWallet(1, ethers.provider)
-    contract = await contract.connect(user)
+    contract = contract.connect(user)
 
     const expectedRejections = [() => contract.addNewEpoch(witnesses, 5)]
     for (const reject of expectedRejections) {
@@ -79,8 +79,9 @@ describe('Reclaim Tests', () => {
   })
   describe('Proofs tests', async () => {
     it('should verify a claim', async () => {
-      let { contract, user, superProofs } = await loadFixture(proofsFixture)
-      await contract.connect(user).verifyProof(superProofs[1])
+      let { contract, user, superProofs, } = await loadFixture(proofsFixture)
+      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
+      let x = await contract.connect(user).verifyProof(superProofs[1], providersHashes)
     })
 
     it('should return the provider name from the proof', async () => {
@@ -144,11 +145,13 @@ describe('Reclaim Tests', () => {
         groupId = txReceipt.events[2].args[0].toString()
       }
 
+      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
       const identity = new Identity()
       const member = identity.getCommitment().toString()
       const txMerkelizeFirstUser = await contract.merkelizeUser(
         superProofs[1],
-        member
+        member,
+        providersHashes
       )
       await txMerkelizeFirstUser.wait()
       await expect(txMerkelizeFirstUser).to.emit(semaphore, 'MemberAdded')
@@ -200,7 +203,9 @@ describe('Reclaim Tests', () => {
       )
       const identity = new Identity()
       const member = identity.getCommitment().toString()
-      const tx = await contract.merkelizeUser(superProofs[1], member)
+
+      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
+      const tx = await contract.merkelizeUser(superProofs[1], member,providersHashes)
       expect(tx).to.emit(contract, 'GroupCreated')
     })
 
@@ -210,10 +215,11 @@ describe('Reclaim Tests', () => {
       )
       const identity = new Identity()
       const member = identity.getCommitment().toString()
-      const tx = await contract.merkelizeUser(superProofs[1], member)
+      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
+      const tx = await contract.merkelizeUser(superProofs[1], member,providersHashes)
 
       await expect(
-        contract.merkelizeUser(superProofs[1], member)
+        contract.merkelizeUser(superProofs[1], member,providersHashes)
       ).to.be.revertedWithCustomError(
         contract,
         'Reclaim__UserAlreadyMerkelized'
@@ -233,7 +239,8 @@ describe('Reclaim Tests', () => {
         20
       )
       const txReceipt = await tx.wait(1)
-      const txMerkelize = await contract.merkelizeUser(superProofs[1], member)
+      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
+      const txMerkelize = await contract.merkelizeUser(superProofs[1], member,providersHashes)
       await txMerkelize.wait()
 
       // get groupId from events
@@ -283,7 +290,8 @@ describe('Reclaim Tests', () => {
 
       superProofs[1].signedClaim.signatures = []
 
-      expect(contract.merkelizeUser(superProofs[1], member)).to.be.revertedWith(
+      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
+      expect(contract.merkelizeUser(superProofs[1], member,providersHashes)).to.be.revertedWith(
         'No signatures'
       )
     })
