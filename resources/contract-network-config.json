@@ -114,7 +114,7 @@
         "explorer": "https://polygonscan.com/address/0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7"
       }
     },
-    "arb-mainnet": {
+    "arbitrum-mainnet": {
       "IncrementalBinaryTree": {
         "address": "0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C",
         "explorer": "https://arbiscan.io/address/0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C"

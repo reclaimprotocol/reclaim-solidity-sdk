@@ -255,7 +255,10 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	 * Call the function to assert
 	 * the validity of several claims proofs
 	 */
-	function verifyProof(Proof memory proof, string[] memory providersHahes) public view {
+	function verifyProof(
+		Proof memory proof,
+		string[] memory providersHahes
+	) public returns (bool) {
 		// create signed claim using claimData and signature.
 		require(proof.signedClaim.signatures.length > 0, "No signatures");
 		Claims.SignedClaim memory signed = Claims.SignedClaim(
@@ -300,7 +303,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 
 		for (uint256 i = 0; i < providersHahes.length; i++) {
 			if (StringUtils.areEqual(proofProviderHash, providersHahes[i])) {
-				return;
+				return true;
 			}
 		}
 		revert("No valid providerHash");
