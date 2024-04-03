@@ -1,5 +1,6 @@
 import { task } from "hardhat/config";
 import { getContractAddress } from "./utils";
+import verify from "../scripts/verify";
 
 task("upgrade").setAction(async ({}, { ethers, upgrades, network }) => {
   const address = getContractAddress(network.name, "Reclaim");
@@ -9,6 +10,8 @@ task("upgrade").setAction(async ({}, { ethers, upgrades, network }) => {
     address,
     ReclaimContractFactoryV2
   );
-  await Reclaim.deployed();
+  const baseReclaim = await Reclaim.deployed();
+
   console.log("Reclaim contract v2 proxy upgraded");
+  await verify(baseReclaim.address, network.name, []);
 });

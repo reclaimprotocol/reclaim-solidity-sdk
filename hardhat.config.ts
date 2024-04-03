@@ -74,11 +74,14 @@ const config: HardhatUserConfig = {
     apiKey: {
       linea_testnet: process.env.LINEASCAN_API_KEY || '',
       optimisticGoerli: process.env.ETHERSCAN_API_KEY!,
+    
       optimisticEthereum: process.env.ETHERSCAN_API_KEY!,
       polygon: process.env.POLYGONSCAN_API_KEY!,
       arbitrumOne: process.env.ARBISCAN_API_KEY!,
       polygonMumbai: process.env.POLYGONSCAN_API_KEY!,
-      'arbitrum-sepolia': process.env.ARBISCAN_API_KEY!
+      'arbitrum-sepolia': process.env.ARBISCAN_API_KEY!,
+      'base-mainnet': process.env.BASESCAN_API_KEY!
+
     },
     customChains: [
       {
@@ -103,6 +106,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: 'https://api-sepolia.arbiscan.io/api',
           browserURL: 'https://sepolia.arbiscan.io/'
+        }
+      },
+      {
+        network: 'base-mainnet',
+        chainId: 8453,
+        urls: {
+          apiURL: "https://api.basescan.org/api",
+          browserURL: 'https://basescan.org/'
         }
       }
     ]
