@@ -256,8 +256,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	 * the validity of several claims proofs
 	 */
 	function verifyProof(
-		Proof memory proof,
-		string[] memory providersHahes
+		Proof memory proof
 	) public returns (bool) {
 		// create signed claim using claimData and signature.
 		require(proof.signedClaim.signatures.length > 0, "No signatures");
@@ -296,17 +295,6 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		}
 
 		// @TODO: verify zkproof
-		string memory proofProviderHash = extractFieldFromContext(
-			proof.claimInfo.context,
-			'"providerHash":"'
-		);
-
-		for (uint256 i = 0; i < providersHahes.length; i++) {
-			if (StringUtils.areEqual(proofProviderHash, providersHahes[i])) {
-				return true;
-			}
-		}
-		revert("No valid providerHash");
 	}
 
 	function createGroup(
@@ -328,8 +316,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 
 	function merkelizeUser(
 		Proof memory proof,
-		uint256 _identityCommitment,
-		string[] memory providerHahes
+		uint256 _identityCommitment
 	) external noReentrant {
 		uint256 groupId = calculateGroupIdFromProvider(proof.claimInfo.provider);
 		bytes32 userParamsHash = calculateUserParamsHash(
@@ -339,7 +326,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		if (merkelizedUserParams[userParamsHash] == true) {
 			revert Reclaim__UserAlreadyMerkelized();
 		}
-		verifyProof(proof, providerHahes);
+		verifyProof(proof);
 		if (createdGroups[groupId] != true) {
 			createGroup(proof.claimInfo.provider, 20);
 		}

@@ -10,7 +10,7 @@ import { Group } from '@semaphore-protocol/group'
 import { generateProof } from '@semaphore-protocol/proof'
 import { expect } from 'chai'
 import { BigNumber, utils } from 'ethers'
-import { Reclaim } from '../src/types'
+import { Reclaim, contracts } from '../src/types'
 import {
   deployReclaimContract,
   generateMockWitnessesList,
@@ -80,8 +80,49 @@ describe('Reclaim Tests', () => {
   describe('Proofs tests', async () => {
     it('should verify a claim', async () => {
       let { contract, user, superProofs, } = await loadFixture(proofsFixture)
-      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
-      let x = await contract.connect(user).verifyProof(superProofs[1], providersHashes)
+      let x = await contract.connect(user).verifyProof(superProofs[1])
+    })
+    it('should simulate proof verification', async () => {
+      let { contract, owner } = await loadFixture(deployFixture)
+      const witnesses = [{addr:"0x244897572368eadf65bfbc5aec98d8e5443a9072",host:"https://reclaim-node.questbook.app"}]
+      await contract.addNewEpoch(witnesses, 1)
+      await contract.fetchEpoch(1)
+      const proof = {
+
+        claimInfo: {
+      
+          context: '{"contextAddress":"0x0","contextMessage":"0098967F","providerHash":"0xeda3e4cee88b5cbaec045410a0042f99ab3733a4d5b5eb2da5cecc25aa9e9df1"}',
+      
+          provider: 'http',
+      
+          parameters: '{"body":"","geoLocation":"in","method":"GET","responseMatches":[{"type":"contains","value":"_steamid\\">Steam ID: 76561198155115943</div>"}],"responseRedactions":[{"jsonPath":"","regex":"_steamid\\">Steam ID: (.*)</div>","xPath":"id(\\"responsive_page_template_content\\")/div[@class=\\"page_header_ctn\\"]/div[@class=\\"page_content\\"]/div[@class=\\"youraccount_steamid\\"]"}],"url":"https://store.steampowered.com/account/"}'
+      
+        },
+      
+        signedClaim: {
+      
+          claim: {
+      
+            epoch: 1,
+      
+            identifier: '0x930a5687ac463eb8f048bd203659bd8f73119c534969258e5a7c5b8eb0987b16',
+      
+            owner: '0xef27fa8830a070aa6e26703be6f17858b61d3fba',
+      
+            timestampS: 1712685785
+      
+          },
+      
+          signatures: [
+      
+            '0xb246a05693f3e21a70eab5dfd5edc1d0597a160c82b8bf9e24d1f09f9dde9899154bb1672c1bf38193a7829e96e4ed09bc327657bf266e90451f6a90c8b45dfb1c'
+      
+          ]
+      
+        }
+      
+      }
+      const result = await contract.verifyProof(proof)
     })
 
     it('should return the provider name from the proof', async () => {
@@ -145,13 +186,11 @@ describe('Reclaim Tests', () => {
         groupId = txReceipt.events[2].args[0].toString()
       }
 
-      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
       const identity = new Identity()
       const member = identity.getCommitment().toString()
       const txMerkelizeFirstUser = await contract.merkelizeUser(
         superProofs[1],
-        member,
-        providersHashes
+        member
       )
       await txMerkelizeFirstUser.wait()
       await expect(txMerkelizeFirstUser).to.emit(semaphore, 'MemberAdded')
@@ -203,9 +242,7 @@ describe('Reclaim Tests', () => {
       )
       const identity = new Identity()
       const member = identity.getCommitment().toString()
-
-      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
-      const tx = await contract.merkelizeUser(superProofs[1], member, providersHashes)
+      const tx = await contract.merkelizeUser(superProofs[1], member)
       expect(tx).to.emit(contract, 'GroupCreated')
     })
 
@@ -215,11 +252,10 @@ describe('Reclaim Tests', () => {
       )
       const identity = new Identity()
       const member = identity.getCommitment().toString()
-      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
-      const tx = await contract.merkelizeUser(superProofs[1], member, providersHashes)
+      const tx = await contract.merkelizeUser(superProofs[1], member)
 
       await expect(
-        contract.merkelizeUser(superProofs[1], member, providersHashes)
+        contract.merkelizeUser(superProofs[1], member)
       ).to.be.revertedWithCustomError(
         contract,
         'Reclaim__UserAlreadyMerkelized'
@@ -239,8 +275,7 @@ describe('Reclaim Tests', () => {
         20
       )
       const txReceipt = await tx.wait(1)
-      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
-      const txMerkelize = await contract.merkelizeUser(superProofs[1], member, providersHashes)
+      const txMerkelize = await contract.merkelizeUser(superProofs[1], member)
       await txMerkelize.wait()
 
       // get groupId from events
@@ -289,9 +324,7 @@ describe('Reclaim Tests', () => {
       await contract.createGroup(superProofs[1].claimInfo.provider, 20)
 
       superProofs[1].signedClaim.signatures = []
-
-      let providersHashes = ["0x3246874620eacad8b93e3e05e5d5bb5877c9bed5ddcaf9b4f6cf291e0fb3c64e"]
-      expect(contract.merkelizeUser(superProofs[1], member, providersHashes)).to.be.revertedWith(
+      expect(contract.merkelizeUser(superProofs[1], member)).to.be.revertedWith(
         'No signatures'
       )
     })
