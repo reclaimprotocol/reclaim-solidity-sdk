@@ -59,6 +59,11 @@ const config: HardhatUserConfig = {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       chainId: 0x5aff,
     },
+    'sapphire-mainnet': {
+      url: "https://sapphire.oasis.io",
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      chainId: 0x5afe,
+    },
     ...(hasCustomNetwork
       ? {
           [NETWORK]: {

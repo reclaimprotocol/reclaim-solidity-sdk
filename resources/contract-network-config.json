@@ -267,6 +267,28 @@
         "address": "0x2973E4147313d87DC576a09Cc5D34026A7e0de4F",
         "explorer": ""
       }
+    },
+    "sapphire-mainnet": {
+      "IncrementalBinaryTree": {
+        "address": "",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "",
+        "explorer": ""
+      }
     }
   }
 }
