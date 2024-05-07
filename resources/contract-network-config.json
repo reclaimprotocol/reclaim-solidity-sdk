@@ -245,6 +245,28 @@
         "address": "0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7",
         "explorer": ""
       }
+    },
+    "sapphire-testnet": {
+      "IncrementalBinaryTree": {
+        "address": "0xD4cf4CBD9B7A1B3D7daFD1f8615090E173449D61",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "0x7046D8F316Af080F861CD4573acFda629D1C8E20",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "0x3B19608F6b08AFcf025Ee7257A37A0267d8a2D2D",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "0xa4CDE1653aC39739EA48982812745E05C447F9Ad",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "0x2973E4147313d87DC576a09Cc5D34026A7e0de4F",
+        "explorer": ""
+      }
     }
   }
 }

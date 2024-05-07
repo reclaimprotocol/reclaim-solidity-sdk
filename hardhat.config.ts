@@ -54,7 +54,11 @@ const config: HardhatUserConfig = {
   defaultNetwork: NETWORK,
   networks: {
     hardhat: {},
-
+    'sapphire-testnet': {
+      url: "https://testnet.sapphire.oasis.io",
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      chainId: 0x5aff,
+    },
     ...(hasCustomNetwork
       ? {
           [NETWORK]: {
