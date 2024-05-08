@@ -1,7 +1,6 @@
 import { task } from 'hardhat/config'
 import { getContractAddress } from './utils'
 import { Reclaim } from "../src/types";
-import { Claims } from "../src/types";
 
 task('verify-proof')
   .setDescription('Verify proof into reclaim')
