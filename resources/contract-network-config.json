@@ -289,6 +289,28 @@
         "address": "",
         "explorer": ""
       }
+    },
+    "hedera-testnet": {
+      "IncrementalBinaryTree": {
+        "address": "",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "",
+        "explorer": ""
+      }
     }
   }
 }

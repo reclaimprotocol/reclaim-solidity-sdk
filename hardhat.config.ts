@@ -10,7 +10,7 @@ import 'solidity-coverage'
 import './tasks'
 // import "@nomicfoundation/hardhat-verify";
 
-const { PRIVATE_KEY, ALCHEMY_API_KEY, NETWORK, INFURA_API_KEY, PROVIDER } =
+const { PRIVATE_KEY, HEDERA_TESTNET_OPERATOR_KEY, ALCHEMY_API_KEY, NETWORK, INFURA_API_KEY, PROVIDER } =
   process.env
 const hasCustomNetwork = NETWORK && NETWORK !== 'hardhat'
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ''
@@ -47,9 +47,12 @@ const config: HardhatUserConfig = {
       viaIR: false,
       optimizer: {
         enabled: true,
-        runs: 200
+        runs: 500
       }
     }
+  },
+  mocha: {
+    timeout: 3600000
   },
   defaultNetwork: NETWORK,
   networks: {
@@ -63,6 +66,10 @@ const config: HardhatUserConfig = {
       url: "https://sapphire.oasis.io",
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       chainId: 0x5afe,
+    },
+    'hedera-testnet': {
+      url: "https://testnet.hashio.io",
+      accounts: HEDERA_TESTNET_OPERATOR_KEY ? [HEDERA_TESTNET_OPERATOR_KEY]: [],
     },
     ...(hasCustomNetwork
       ? {
