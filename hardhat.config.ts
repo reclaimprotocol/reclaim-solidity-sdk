@@ -96,7 +96,8 @@ const config: HardhatUserConfig = {
       arbitrumOne: process.env.ARBISCAN_API_KEY!,
       polygonMumbai: process.env.POLYGONSCAN_API_KEY!,
       'arbitrum-sepolia': process.env.ARBISCAN_API_KEY!,
-      'base-mainnet': process.env.BASESCAN_API_KEY!
+      'base-mainnet': process.env.BASESCAN_API_KEY!,
+      'polygon-amoy': process.env.POLYGONSCAN_API_KEY!,
 
     },
     customChains: [
@@ -130,6 +131,22 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://api.basescan.org/api",
           browserURL: 'https://basescan.org/'
+        }
+      },
+      {
+        network: 'polygon-amoy',
+        chainId: 80002,
+        urls: {
+          apiURL: "https://api-amoy.polygonscan.com/api",
+          browserURL: 'https://amoy.polygonscan.com/'
+        }
+      },
+      {
+        network: 'polygon',
+        chainId: 137,
+        urls: {
+          apiURL: "https://api.polygonscan.com/api",
+          browserURL: 'https://polygonscan.com/'
         }
       }
     ]

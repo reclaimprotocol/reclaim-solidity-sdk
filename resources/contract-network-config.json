@@ -269,46 +269,38 @@
       }
     },
     "sapphire-mainnet": {
-      "IncrementalBinaryTree": {
-        "address": "",
-        "explorer": ""
-      },
-      "Pairing": {
-        "address": "",
-        "explorer": ""
-      },
-      "SemaphoreVerifier": {
-        "address": "",
-        "explorer": ""
-      },
-      "Semaphore": {
-        "address": "",
-        "explorer": ""
-      },
-      "Reclaim": {
-        "address": "",
-        "explorer": ""
-      }
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
+      "Reclaim": { "address": "", "explorer": "" }
     },
     "hedera-testnet": {
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
+      "Reclaim": { "address": "", "explorer": "" }
+    },
+    "polygon-amoy": {
       "IncrementalBinaryTree": {
-        "address": "",
+        "address": "0x7bc540E9F61edF5F5A8f7B33FD654d0055Ed1979",
         "explorer": ""
       },
       "Pairing": {
-        "address": "",
+        "address": "0x7B1bcafc8494e697A4D037E114325864A11F4803",
         "explorer": ""
       },
       "SemaphoreVerifier": {
-        "address": "",
+        "address": "0xB500E8372D4D247151f5037F484da6f93947716A",
         "explorer": ""
       },
       "Semaphore": {
-        "address": "",
+        "address": "0x4D1ee04EB5CeE02d4C123d4b67a86bDc7cA2E62A",
         "explorer": ""
       },
       "Reclaim": {
-        "address": "",
+        "address": "0xcd94A4f7F85dFF1523269C52D0Ab6b85e9B22866",
         "explorer": ""
       }
     }

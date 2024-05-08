@@ -5,7 +5,7 @@ import { Reclaim } from "../src/types";
 task('verify-proof')
   .setDescription('Verify proof into reclaim')
 //   .addParam('', 'name of the dapp you want to register')
-  .setAction(async ({ }, { ethers, upgrades, network }) => {
+  .setAction(async ({ }, { ethers, network }) => {
         const signerAddress = await ethers.provider.getSigner().getAddress();
         console.log(
             `verifying proof on "${network.name}" from address "${signerAddress}"`
@@ -34,7 +34,7 @@ task('verify-proof')
                 "epoch": 1,
                 "timestampS": 1710157447
             },
-            "signatures": ["0x52e2a591f51351c1883559f8b6c6264b9cb5984d0b7ccc805078571242166b357994460a1bf8f9903c4130f67d358d7d6e9a52df9a38c51db6a10574b946884c1cb"],
+            "signatures": ["0x52e2a591f51351c1883559f8b6c6264b9cb5984d0b7ccc805078571242166b357994460a1bf8f9903c4130f67d358d7d6e9a52df9a38c51db6a10574b946884c1b"],
         }
 
 
@@ -42,7 +42,7 @@ task('verify-proof')
             claimInfo: claimInfo,
             signedClaim: signedClaim
         }
-        
+        console.log(proof);
         const verifyResponse = await reclaim.verifyProof(proof);
 
         await verifyResponse.wait()
