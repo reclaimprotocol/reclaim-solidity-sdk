@@ -303,6 +303,35 @@
         "address": "0xcd94A4f7F85dFF1523269C52D0Ab6b85e9B22866",
         "explorer": ""
       }
+    },
+    "avalanche-testnet": {
+      "IncrementalBinaryTree": {
+        "address": "0x02991C5f64a463C41dE158692Cc5A603cAA2ad00",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "0xe4377A529A47Ba2fBE34EfA6B0a4A8cD12eb93BC",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "0x7B1bcafc8494e697A4D037E114325864A11F4803",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "0x7bc540E9F61edF5F5A8f7B33FD654d0055Ed1979",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "0x4aF7676DEAD1d21a6f157ff014BD088836659EC4",
+        "explorer": ""
+      }
+    },
+    "avalanche-c-chain": {
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
+      "Reclaim": { "address": "", "explorer": "" }
     }
   }
 }

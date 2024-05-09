@@ -57,6 +57,16 @@ const config: HardhatUserConfig = {
   defaultNetwork: NETWORK,
   networks: {
     hardhat: {},
+    ...(hasCustomNetwork
+      ? {
+          [NETWORK]: {
+            url: provider_url,
+            // uncomment to make tx go faster
+            // gasPrice: 450000000000,
+            accounts: [PRIVATE_KEY]
+          }
+        }
+      : {}),
     'sapphire-testnet': {
       url: "https://testnet.sapphire.oasis.io",
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
@@ -71,16 +81,16 @@ const config: HardhatUserConfig = {
       url: "https://testnet.hashio.io",
       accounts: HEDERA_TESTNET_OPERATOR_KEY ? [HEDERA_TESTNET_OPERATOR_KEY]: [],
     },
-    ...(hasCustomNetwork
-      ? {
-          [NETWORK]: {
-            url: provider_url,
-            // uncomment to make tx go faster
-            // gasPrice: 450000000000,
-            accounts: [PRIVATE_KEY]
-          }
-        }
-      : {})
+    'avalanche-mainnet': {
+      url: 'https://api.avax.network/ext/bc/C/rpc',
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      chainId: 43114,
+    },
+    'avalanche-testnet': {
+      url: 'https://api.avax-test.network/ext/bc/C/rpc',
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      chainId: 43113,
+    },
   },
   typechain: {
     outDir: 'src/types',
@@ -98,7 +108,7 @@ const config: HardhatUserConfig = {
       'arbitrum-sepolia': process.env.ARBISCAN_API_KEY!,
       'base-mainnet': process.env.BASESCAN_API_KEY!,
       'polygon-amoy': process.env.POLYGONSCAN_API_KEY!,
-
+      avalancheFujiTestnet : process.env.POLYGONSCAN_API_KEY!
     },
     customChains: [
       {
