@@ -138,24 +138,24 @@
     },
     "opt-mainnet": {
       "IncrementalBinaryTree": {
-        "address": "0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C",
-        "explorer": "https://optimistic.etherscan.io/address/0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C"
+        "address": "0x69B87bE50957506A11d40EC670435Cf6f3e36fFA",
+        "explorer": "https://optimistic.etherscan.io/address/0x69B87bE50957506A11d40EC670435Cf6f3e36fFA"
       },
       "Pairing": {
-        "address": "0x0E2CF8810B11c2875246d634f030897e77491680",
-        "explorer": "https://optimistic.etherscan.io/address/0x0E2CF8810B11c2875246d634f030897e77491680"
+        "address": "0xEC843FAA80023aFe0F228BE6585DfF6d721E98D5",
+        "explorer": "https://optimistic.etherscan.io/address/0xEC843FAA80023aFe0F228BE6585DfF6d721E98D5"
       },
       "SemaphoreVerifier": {
-        "address": "0x88cEd91D4966D82912774B9fdf9ca4E065881a91",
-        "explorer": "https://optimistic.etherscan.io/address/0x88cEd91D4966D82912774B9fdf9ca4E065881a91"
+        "address": "0x058C9A4D97f338fdec082da0E2965ac3E9191b65",
+        "explorer": "https://optimistic.etherscan.io/address/0x058C9A4D97f338fdec082da0E2965ac3E9191b65"
       },
       "Semaphore": {
-        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
-        "explorer": "https://optimistic.etherscan.io/address/0x93a9d327836A5279E835EF3147ac1fb54FBd726B#code"
+        "address": "0x9c04BEb93d3c84f94A89e4102a24475e29084dBE",
+        "explorer": "https://optimistic.etherscan.io/address/0x9c04BEb93d3c84f94A89e4102a24475e29084dBE"
       },
       "Reclaim": {
-        "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
-        "explorer": "https://optimistic.etherscan.io/address/0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1"
+        "address": "0x9F0472FD02Ca1BC2d6C3A1702803Ba822C7C7E91",
+        "explorer": "https://optimistic.etherscan.io/address/0x9F0472FD02Ca1BC2d6C3A1702803Ba822C7C7E91"
       }
     },
     "polygon-mumbai": {
@@ -246,7 +246,7 @@
         "explorer": ""
       }
     },
-    "sapphire-testnet": {
+    "oasis-sapphire-testnet": {
       "IncrementalBinaryTree": {
         "address": "0xD4cf4CBD9B7A1B3D7daFD1f8615090E173449D61",
         "explorer": ""
@@ -268,12 +268,27 @@
         "explorer": ""
       }
     },
-    "sapphire-mainnet": {
-      "IncrementalBinaryTree": { "address": "", "explorer": "" },
-      "Pairing": { "address": "", "explorer": "" },
-      "SemaphoreVerifier": { "address": "", "explorer": "" },
-      "Semaphore": { "address": "", "explorer": "" },
-      "Reclaim": { "address": "", "explorer": "" }
+    "oasis-sapphire-mainnet": {
+      "IncrementalBinaryTree": {
+        "address": "0x7046D8F316Af080F861CD4573acFda629D1C8E20",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "0x4aF7676DEAD1d21a6f157ff014BD088836659EC4",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "0xcd94A4f7F85dFF1523269C52D0Ab6b85e9B22866",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "0x3B19608F6b08AFcf025Ee7257A37A0267d8a2D2D",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "0x87770899a8aF503Af5C319042b47313A09Db4Ef7",
+        "explorer": ""
+      }
     },
     "hedera-testnet": {
       "IncrementalBinaryTree": { "address": "", "explorer": "" },
