@@ -341,12 +341,27 @@
         "explorer": ""
       }
     },
-    "avalanche-c-chain": {
-      "IncrementalBinaryTree": { "address": "", "explorer": "" },
-      "Pairing": { "address": "", "explorer": "" },
-      "SemaphoreVerifier": { "address": "", "explorer": "" },
-      "Semaphore": { "address": "", "explorer": "" },
-      "Reclaim": { "address": "", "explorer": "" }
+    "avalanche-mainnet": {
+      "IncrementalBinaryTree": {
+        "address": "0x9c04BEb93d3c84f94A89e4102a24475e29084dBE",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "0x058C9A4D97f338fdec082da0E2965ac3E9191b65",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "0x5E3477f716Ea9Bf7Be2E275b4c2FCD0aFf532E19",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "0x0B999A5D54a20283F22DD6529e8eeB3D72caBE94",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "0xe4377A529A47Ba2fBE34EfA6B0a4A8cD12eb93BC",
+        "explorer": ""
+      }
     }
   }
 }

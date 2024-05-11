@@ -112,7 +112,8 @@ const config: HardhatUserConfig = {
       'arbitrum-sepolia': process.env.ARBISCAN_API_KEY!,
       'base-mainnet': process.env.BASESCAN_API_KEY!,
       'polygon-amoy': process.env.POLYGONSCAN_API_KEY!,
-      avalancheFujiTestnet : process.env.POLYGONSCAN_API_KEY!
+      avalancheFujiTestnet : 'avascan',
+      avalanche: 'avascan'
     },
     customChains: [
       {
