@@ -116,24 +116,24 @@
     },
     "arbitrum-mainnet": {
       "IncrementalBinaryTree": {
-        "address": "0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C",
-        "explorer": "https://arbiscan.io/address/0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C"
+        "address": "0x69B87bE50957506A11d40EC670435Cf6f3e36fFA",
+        "explorer": ""
       },
       "Pairing": {
-        "address": "0x0E2CF8810B11c2875246d634f030897e77491680",
-        "explorer": "https://arbiscan.io/address/0x0E2CF8810B11c2875246d634f030897e77491680"
+        "address": "0xEC843FAA80023aFe0F228BE6585DfF6d721E98D5",
+        "explorer": ""
       },
       "SemaphoreVerifier": {
-        "address": "0x88cEd91D4966D82912774B9fdf9ca4E065881a91",
-        "explorer": "https://arbiscan.io/address/0x88cEd91D4966D82912774B9fdf9ca4E065881a91"
+        "address": "0x058C9A4D97f338fdec082da0E2965ac3E9191b65",
+        "explorer": ""
       },
       "Semaphore": {
-        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
-        "explorer": "https://arbiscan.io/address/0x93a9d327836A5279E835EF3147ac1fb54FBd726B#code"
+        "address": "0x9c04BEb93d3c84f94A89e4102a24475e29084dBE",
+        "explorer": ""
       },
       "Reclaim": {
-        "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
-        "explorer": "https://arbiscan.io/address/0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1"
+        "address": "0x9F0472FD02Ca1BC2d6C3A1702803Ba822C7C7E91",
+        "explorer": ""
       }
     },
     "opt-mainnet": {
@@ -226,23 +226,23 @@
     },
     "arbitrum-sepolia": {
       "IncrementalBinaryTree": {
-        "address": "0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d",
+        "address": "0xB500E8372D4D247151f5037F484da6f93947716A",
         "explorer": ""
       },
       "Pairing": {
-        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+        "address": "0x9F0472FD02Ca1BC2d6C3A1702803Ba822C7C7E91",
         "explorer": ""
       },
       "SemaphoreVerifier": {
-        "address": "0x41488b9509d6A9143E9b022064D44743e63eD885",
+        "address": "0xe4377A529A47Ba2fBE34EfA6B0a4A8cD12eb93BC",
         "explorer": ""
       },
       "Semaphore": {
-        "address": "0xF90085f5Fd1a3bEb8678623409b3811eCeC5f6A5",
+        "address": "0x02991C5f64a463C41dE158692Cc5A603cAA2ad00",
         "explorer": ""
       },
       "Reclaim": {
-        "address": "0xd6534f52CEB3d0139b915bc0C3278a94687fA5C7",
+        "address": "0x4D1ee04EB5CeE02d4C123d4b67a86bDc7cA2E62A",
         "explorer": ""
       }
     },

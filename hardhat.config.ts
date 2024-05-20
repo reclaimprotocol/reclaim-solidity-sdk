@@ -96,6 +96,16 @@ const config: HardhatUserConfig = {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url:  'https://mainnet.optimism.io/'
     },
+    'arbitrum-sepolia': {
+      chainId: 421614,
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url: 'https://sepolia-rollup.arbitrum.io/rpc'
+    },
+    'arbitrum-mainnet': {
+      chainId: 42161,
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url: 'https://arbitrum-one.publicnode.com'
+    }
   },
   typechain: {
     outDir: 'src/types',
