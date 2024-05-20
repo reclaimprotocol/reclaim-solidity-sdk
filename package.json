@@ -21,6 +21,7 @@
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@oasisprotocol/sapphire-hardhat": "^2.19.4",
     "@openzeppelin/hardhat-upgrades": "^1.28.0",
     "@reclaimprotocol/crypto-sdk": "file:./crypto-sdk",
     "@typechain/ethers-v5": "^10.2.1",

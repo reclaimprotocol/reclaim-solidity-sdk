@@ -10,7 +10,7 @@ task("add-new-epoch", "Start a new epoch")
   .addParam("host", "Hostof a witness", undefined, types.string)
   .setAction(async (taskArgs, { ethers, network }) => {
     const { address, host } = taskArgs;
-    if (!address || !host) {
+    if (!address) {
       console.log("here");
       return;
     }
