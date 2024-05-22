@@ -5,6 +5,7 @@ import { HardhatUserConfig } from 'hardhat/config'
 import '@nomicfoundation/hardhat-toolbox'
 import '@openzeppelin/hardhat-upgrades'
 import '@semaphore-protocol/hardhat'
+import '@okxweb3/hardhat-explorer-verify'
 
 import 'solidity-coverage'
 import './tasks'
@@ -51,6 +52,9 @@ const config: HardhatUserConfig = {
       }
     }
   },
+  okxweb3explorer: {
+    apiKey:  process.env.OKX_API_KEY
+  },
   mocha: {
     timeout: 3600000
   },
@@ -77,6 +81,16 @@ const config: HardhatUserConfig = {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       chainId: 0x5afe,
     },
+    'okx-mainnet': {
+      url: "https://oktc-mainnet.public.blastapi.io",
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      chainId: 66
+    },
+    'okx-xlayer-testnet': {
+      url: "https://testrpc.xlayer.tech:443",
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      chainId: 195
+    },    
     'hedera-testnet': {
       url: "https://pool.arkhia.io/hedera/testnet/json-rpc/v1/" + HEDERA_API_KEY,
       accounts: HEDERA_TESTNET_OPERATOR_KEY ? [HEDERA_TESTNET_OPERATOR_KEY]: [],
@@ -122,10 +136,28 @@ const config: HardhatUserConfig = {
       'arbitrum-sepolia': process.env.ARBISCAN_API_KEY!,
       'base-mainnet': process.env.BASESCAN_API_KEY!,
       'polygon-amoy': process.env.POLYGONSCAN_API_KEY!,
+      'okx-xlayer-testnet': process.env.OKX_API_KEY!,
+      'okx-xlayer-mainnet': process.env.OKX_API_KEY!,
       avalancheFujiTestnet : 'avascan',
       avalanche: 'avascan'
     },
     customChains: [
+      {
+        network: "okx-xlayer-testnet",
+        chainId: 195, //196 for mainnet
+        urls: {
+            apiURL: "https://www.oklink.com/api/v5/explorer/contract/verify-source-code-plugin/XLAYER",
+            browserURL: "https://www.oklink.com/xlayer"
+        }
+      },
+      {
+        network: "okx-xlayer-mainnet",
+        chainId: 196, //196 for mainnet
+        urls: {
+            apiURL: "https://www.oklink.com/api/v5/explorer/contract/verify-source-code-plugin/XLAYER_TESTNET",
+            browserURL: "https://www.oklink.com/xlayer-test"
+        }
+      },
       {
         network: 'linea_testnet',
         chainId: 59140,
