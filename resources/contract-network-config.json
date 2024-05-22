@@ -295,7 +295,14 @@
       "Pairing": { "address": "", "explorer": "" },
       "SemaphoreVerifier": { "address": "", "explorer": "" },
       "Semaphore": { "address": "", "explorer": "" },
-      "Reclaim": { "address": "", "explorer": "" }
+      "Reclaim": { "address": "0xaE72f9Ab6854965dFEd0fBBD5d6BA1187e512071", "explorer": "" }
+    },
+    "hedera-mainnet": {
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
+      "Reclaim": { "address": "0x2a0a2c9f1f2cc87c6f167528cabadde25bbe170d", "explorer": "" }
     },
     "polygon-amoy": {
       "IncrementalBinaryTree": {
