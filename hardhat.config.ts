@@ -81,10 +81,10 @@ const config: HardhatUserConfig = {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       chainId: 0x5afe,
     },
-    'okx-mainnet': {
-      url: "https://oktc-mainnet.public.blastapi.io",
+    'okx-xlayer-mainnet': {
+      url: "https://xlayerrpc.okx.com",
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
-      chainId: 66
+      chainId: 196
     },
     'okx-xlayer-testnet': {
       url: "https://testrpc.xlayer.tech:443",
@@ -143,16 +143,16 @@ const config: HardhatUserConfig = {
     },
     customChains: [
       {
-        network: "okx-xlayer-testnet",
-        chainId: 195, //196 for mainnet
+        network: "okx-xlayer-mainnet",
+        chainId: 196, 
         urls: {
             apiURL: "https://www.oklink.com/api/v5/explorer/contract/verify-source-code-plugin/XLAYER",
             browserURL: "https://www.oklink.com/xlayer"
         }
       },
       {
-        network: "okx-xlayer-mainnet",
-        chainId: 196, //196 for mainnet
+        network: "okx-xlayer-testnet",
+        chainId: 195,
         urls: {
             apiURL: "https://www.oklink.com/api/v5/explorer/contract/verify-source-code-plugin/XLAYER_TESTNET",
             browserURL: "https://www.oklink.com/xlayer-test"
