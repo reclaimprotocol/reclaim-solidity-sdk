@@ -119,6 +119,11 @@ const config: HardhatUserConfig = {
       chainId: 42161,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url: 'https://arbitrum-one.publicnode.com'
+    },
+    'redbelly-devnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url: 'https://rbn-gcp-australia-southeast1-a-0-b-v2.devnet.redbelly.network:8545',
+      chainId: 152
     }
   },
   typechain: {
