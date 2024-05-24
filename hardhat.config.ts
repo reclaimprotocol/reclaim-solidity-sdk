@@ -124,6 +124,14 @@ const config: HardhatUserConfig = {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url: 'https://rbn-gcp-australia-southeast1-a-0-b-v2.devnet.redbelly.network:8545',
       chainId: 152
+    },
+    'rootstock-mainnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url: 'https://mycrypto.rsk.co',
+    },
+    'rootstock-testnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url: 'https://public-node.testnet.rsk.co',
     }
   },
   typechain: {
