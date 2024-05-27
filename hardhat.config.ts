@@ -132,6 +132,14 @@ const config: HardhatUserConfig = {
     'rootstock-testnet': {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url: 'https://public-node.testnet.rsk.co',
+    },
+    'manta-mainnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url: 'https://manta-pacific.drpc.org',
+    },
+    'manta-testnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url: 'https://manta-testnet.calderachain.xyz/http',
     }
   },
   typechain: {
