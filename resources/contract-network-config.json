@@ -492,6 +492,50 @@
         "address": "0x9F0472FD02Ca1BC2d6C3A1702803Ba822C7C7E91",
         "explorer": ""
       }
+    },
+    "manta-mainnet": {
+      "IncrementalBinaryTree": {
+        "address": "",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "",
+        "explorer": ""
+      }
+    },
+    "manta-testnet": {
+      "IncrementalBinaryTree": {
+        "address": "",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "",
+        "explorer": ""
+      }
     }
   }
 }
