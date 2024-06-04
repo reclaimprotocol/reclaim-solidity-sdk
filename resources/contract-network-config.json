@@ -495,47 +495,32 @@
     },
     "manta-mainnet": {
       "IncrementalBinaryTree": {
-        "address": "",
+        "address": "0x69B87bE50957506A11d40EC670435Cf6f3e36fFA",
         "explorer": ""
       },
       "Pairing": {
-        "address": "",
+        "address": "0xEC843FAA80023aFe0F228BE6585DfF6d721E98D5",
         "explorer": ""
       },
       "SemaphoreVerifier": {
-        "address": "",
+        "address": "0x058C9A4D97f338fdec082da0E2965ac3E9191b65",
         "explorer": ""
       },
       "Semaphore": {
-        "address": "",
+        "address": "0x9c04BEb93d3c84f94A89e4102a24475e29084dBE",
         "explorer": ""
       },
       "Reclaim": {
-        "address": "",
+        "address": "0x9F0472FD02Ca1BC2d6C3A1702803Ba822C7C7E91",
         "explorer": ""
       }
     },
     "manta-testnet": {
-      "IncrementalBinaryTree": {
-        "address": "",
-        "explorer": ""
-      },
-      "Pairing": {
-        "address": "",
-        "explorer": ""
-      },
-      "SemaphoreVerifier": {
-        "address": "",
-        "explorer": ""
-      },
-      "Semaphore": {
-        "address": "",
-        "explorer": ""
-      },
-      "Reclaim": {
-        "address": "",
-        "explorer": ""
-      }
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
+      "Reclaim": { "address": "", "explorer": "" }
     }
   }
 }

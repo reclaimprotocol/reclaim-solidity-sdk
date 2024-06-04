@@ -16,25 +16,44 @@ task('verify-proof')
         const reclaim = await reclaimFactory.attach(contractAddress)
 
         // Verify Proof
-
-        const owner = "0xe4c20c9f558160ec08106de300326f7e9c73fb7f"
+        const data2Verify = {
+          identifier: '0x9b92efaa7f1c6fc7e0ff86f2ff0dbe569788ad36f2ec3d730a5715c21e25fdda',
+          claimData: {
+            provider: 'http',
+            parameters: '{"headers":{"accept":"application/json, text/plain, */*"},"method":"GET","responseMatches":[{"type":"contains","value":"{\\"ethereum\\":{\\"usd\\":3804.24}}"}],"responseRedactions":[],"url":"https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"}',
+            owner: '0x1be31a94361a391bbafb2a4ccd704f57dc04d4bb',
+            timestampS: 1717383161,
+            context: '{"providerHash":"0xe11e1f569bd47f02aca3306a5b544e12b37bcbceb0e8df890e07f723901f709f"}',
+            identifier: '0x9b92efaa7f1c6fc7e0ff86f2ff0dbe569788ad36f2ec3d730a5715c21e25fdda',
+            epoch: 1
+          },
+          signatures: [
+            '0x3fcc9f4cf27950a9b88cd2bfdc44a3735709e35390ec79962a12a459f16253be2cd75686d42c09993650d1e96d7f8d898b628686c896c7598f296ec9d3c490b31b'
+          ],
+          witnesses: [
+            {
+              id: '0x244897572368eadf65bfbc5aec98d8e5443a9072',
+              url: 'https://reclaim-node.questbook.app'
+            }
+          ]
+        };
 
         const claimInfo = {
-            "provider": "http",
-            "parameters": "{\"body\":\"\",\"geoLocation\":\"in\",\"method\":\"GET\",\"responseMatches\":[{\"type\":\"contains\",\"value\":\"_steamid\\\">Steam ID: 76561199632643233</div>\"}],\"responseRedactions\":[{\"jsonPath\":\"\",\"regex\":\"_steamid\\\">Steam ID: (.*)</div>\",\"xPath\":\"id(\\\"responsive_page_template_content\\\")/div[@class=\\\"page_header_ctn\\\"]/div[@class=\\\"page_content\\\"]/div[@class=\\\"youraccount_steamid\\\"]\"}],\"url\":\"https://store.steampowered.com/account/\"}",
-            "context": "{\"contextAddress\":\"user's address\",\"contextMessage\":\"for acmecorp.com on 1st january\"}",
-        }
+            "provider": data2Verify.claimData.provider,
+            "parameters": data2Verify.claimData.parameters,
+            "context": data2Verify.claimData.context,
+        };
 
-        const identifier = "0x531322a6c34e5a71296a5ee07af13f0c27b5b1e50616f816374aff6064daaf55"
+        const identifier = data2Verify.claimData.identifier;
 
         const signedClaim = {
             "claim": {
-                "identifier": identifier,
-                "owner": owner,
-                "epoch": 1,
-                "timestampS": 1710157447
+                "identifier": data2Verify.claimData.identifier,
+                "owner": data2Verify.claimData.owner,
+                "epoch": data2Verify.claimData.epoch,
+                "timestampS": data2Verify.claimData.timestampS
             },
-            "signatures": ["0x52e2a591f51351c1883559f8b6c6264b9cb5984d0b7ccc805078571242166b357994460a1bf8f9903c4130f67d358d7d6e9a52df9a38c51db6a10574b946884c1b"],
+            "signatures": data2Verify.signatures,
         }
 
 
