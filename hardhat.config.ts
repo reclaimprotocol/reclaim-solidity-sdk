@@ -160,7 +160,8 @@ const config: HardhatUserConfig = {
       'okx-xlayer-testnet': process.env.OKX_API_KEY!,
       'okx-xlayer-mainnet': process.env.OKX_API_KEY!,
       avalancheFujiTestnet : 'avascan',
-      avalanche: 'avascan'
+      avalanche: 'avascan',
+      'celo-alfajores': process.env.CELOSCAN_API_KEY!,
     },
     customChains: [
       {
@@ -226,6 +227,14 @@ const config: HardhatUserConfig = {
           apiURL: "https://api.polygonscan.com/api",
           browserURL: 'https://polygonscan.com/'
         }
+      },
+      {
+        network: "celo-alfajores",
+        chainId: 44787,
+        urls: {
+            apiURL: "https://api-alfajores.celoscan.io/api",
+            browserURL: "https://alfajores.celoscan.io",
+        },
       }
     ]
   }
