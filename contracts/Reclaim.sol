@@ -255,9 +255,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	 * Call the function to assert
 	 * the validity of several claims proofs
 	 */
-	function verifyProof(
-		Proof memory proof
-	) public returns (bool) {
+	function verifyProof(Proof memory proof) public returns (bool) {
 		// create signed claim using claimData and signature.
 		require(proof.signedClaim.signatures.length > 0, "No signatures");
 		Claims.SignedClaim memory signed = Claims.SignedClaim(
@@ -282,6 +280,17 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 			"Number of signatures not equal to number of witnesses"
 		);
 
+		// Check for duplicate witness signatures
+		for (uint256 i = 0; i < signedWitnesses.length; i++) {
+			for (uint256 j = 0; j < signedWitnesses.length; j++) {
+				if (i == j) continue;
+				require(
+					signedWitnesses[i] != signedWitnesses[j],
+					"Duplicated Signatures Found"
+				);
+			}
+		}
+
 		// Update awaited: more checks on whose signatures can be considered.
 		for (uint256 i = 0; i < signed.signatures.length; i++) {
 			bool found = false;
@@ -293,8 +302,6 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 			}
 			require(found, "Signature not appropriate");
 		}
-
-		// @TODO: verify zkproof
 	}
 
 	function createGroup(
