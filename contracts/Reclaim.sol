@@ -170,7 +170,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 			// and reduce the number of witnesses left to pick from
 			// since solidity doesn't support "pop()" in memory arrays
 			// we swap the last element with the element we want to remove
-			witnessesLeftList[witnessIndex] = epochData.witnesses[witnessesLeft - 1];
+			witnessesLeftList[witnessIndex] = witnessesLeftList[witnessesLeft - 1];
 			byteOffset = (byteOffset + 4) % completeHash.length;
 			witnessesLeft -= 1;
 		}
