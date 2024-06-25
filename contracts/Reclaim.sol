@@ -430,7 +430,8 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		string memory provider,
 		string memory params
 	) internal pure returns (bytes32) {
-		bytes32 userParamsHash = keccak256(abi.encodePacked(provider, params));
+		string memory delimiter = ":";
+		bytes32 userParamsHash = keccak256(abi.encodePacked(provider, delimiter, params));
 		return userParamsHash;
 	}
 }
