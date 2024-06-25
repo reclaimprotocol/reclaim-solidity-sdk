@@ -403,14 +403,6 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 
 	// internal code -----
 
-	function uintDifference(uint256 a, uint256 b) internal pure returns (uint256) {
-		if (a > b) {
-			return a - b;
-		}
-
-		return b - a;
-	}
-
 	/**
 	 * @dev Get/Calculate the groupId for a specific provider
 	 */
