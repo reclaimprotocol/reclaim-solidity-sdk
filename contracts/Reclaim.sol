@@ -87,7 +87,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	mapping(bytes32 => uint256) dappIdToExternalNullifier;
 
 	// Modifiers
-	modifier noReentrant() {
+	modifier nonReentrant() {
 		require(!locked, "No re-entrancy");
 		locked = true;
 		_;
@@ -324,7 +324,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	function merkelizeUser(
 		Proof memory proof,
 		uint256 _identityCommitment
-	) external noReentrant {
+	) external nonReentrant {
 		uint256 groupId = calculateGroupIdFromProvider(proof.claimInfo.provider);
 		bytes32 userParamsHash = calculateUserParamsHash(
 			proof.claimInfo.provider,
