@@ -233,9 +233,12 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		) {
 			end++;
 		}
-		if (end <= start) {
+
+		// if the end is not found, return an empty string because of malformed or missing message
+		if (end <= start || !(dataBytes[end] == '"' && dataBytes[end - 1] != "\\")) {
 			return ""; // Malformed or missing message
 		}
+
 		bytes memory contextMessage = new bytes(end - start);
 		for (uint i = start; i < end; i++) {
 			contextMessage[i - start] = dataBytes[i];
