@@ -225,7 +225,11 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		if (!foundStart) {
 			return ""; // Malformed or missing message
 		}
-		// Find the end of the message, assuming it ends with a quote not preceded by a backslash
+
+		// Find the end of the message, assuming it ends with a quote not preceded by a backslash.
+		// The function does not need to handle escaped backslashes specifically because
+		// it only looks for the first unescaped quote to mark the end of the field value.
+		// Escaped quotes (preceded by a backslash) are naturally ignored in this logic.
 		uint end = start;
 		while (
 			end < dataBytes.length &&
