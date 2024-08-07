@@ -204,24 +204,24 @@
     },
     "base-mainnet": {
       "IncrementalBinaryTree": {
-        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
-        "explorer": "https://basescan.org/address/0x93a9d327836A5279E835EF3147ac1fb54FBd726B"
+        "address": "0x8B4dd301534B4c701cf0A96e03C6d556DdE05808",
+        "explorer": ""
       },
       "Pairing": {
-        "address": "0x0E2CF8810B11c2875246d634f030897e77491680",
-        "explorer": "https://basescan.org/address/0x0E2CF8810B11c2875246d634f030897e77491680"
+        "address": "0xd9692F91DC89f14f4211fa07aD2Bd1E9aD99D953",
+        "explorer": ""
       },
       "SemaphoreVerifier": {
-        "address": "0xa15667CC95718465838F83fA4fC9B232da6dB2BB",
-        "explorer": "https://basescan.org/address/0xa15667CC95718465838F83fA4fC9B232da6dB2BB"
+        "address": "0x1cf14e7F31F6A2Af830A7280d26d3Efac7FF4E0f",
+        "explorer": ""
       },
       "Semaphore": {
-        "address": "0x41488b9509d6A9143E9b022064D44743e63eD885",
-        "explorer": "https://basescan.org/address/0x41488b9509d6A9143E9b022064D44743e63eD885"
+        "address": "0x88122A1f2a791d6295517260c80A914b9a829299",
+        "explorer": ""
       },
       "Reclaim": {
-        "address": "0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d",
-        "explorer": "https://basescan.org/address/0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d"
+        "address": "0x15d267946ae3134429fC7b5895B91FE17935D042",
+        "explorer": ""
       }
     },
     "arbitrum-sepolia": {

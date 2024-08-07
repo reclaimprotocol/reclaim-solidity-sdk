@@ -120,6 +120,11 @@ const config: HardhatUserConfig = {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url: 'https://arbitrum-one.publicnode.com'
     },
+    'base-mainnet': {
+      url: "https://base-pokt.nodies.app",
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      chainId: 8453
+    },
     'redbelly-devnet': {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url: 'https://rbn-gcp-australia-southeast1-a-0-b-v2.devnet.redbelly.network:8545',
