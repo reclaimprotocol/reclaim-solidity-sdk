@@ -87,7 +87,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	mapping(bytes32 => uint256) dappIdToExternalNullifier;
 
 	// Modifiers
-	modifier noReentrant() {
+	modifier nonReentrant() {
 		require(!locked, "No re-entrancy");
 		locked = true;
 		_;
@@ -170,7 +170,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 			// and reduce the number of witnesses left to pick from
 			// since solidity doesn't support "pop()" in memory arrays
 			// we swap the last element with the element we want to remove
-			witnessesLeftList[witnessIndex] = epochData.witnesses[witnessesLeft - 1];
+			witnessesLeftList[witnessIndex] = witnessesLeftList[witnessesLeft - 1];
 			byteOffset = (byteOffset + 4) % completeHash.length;
 			witnessesLeft -= 1;
 		}
@@ -225,7 +225,11 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		if (!foundStart) {
 			return ""; // Malformed or missing message
 		}
-		// Find the end of the message, assuming it ends with a quote not preceded by a backslash
+
+		// Find the end of the message, assuming it ends with a quote not preceded by a backslash.
+		// The function does not need to handle escaped backslashes specifically because
+		// it only looks for the first unescaped quote to mark the end of the field value.
+		// Escaped quotes (preceded by a backslash) are naturally ignored in this logic.
 		uint end = start;
 		while (
 			end < dataBytes.length &&
@@ -233,9 +237,12 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		) {
 			end++;
 		}
-		if (end <= start) {
+
+		// if the end is not found, return an empty string because of malformed or missing message
+		if (end <= start || !(dataBytes[end] == '"' && dataBytes[end - 1] != "\\")) {
 			return ""; // Malformed or missing message
 		}
+
 		bytes memory contextMessage = new bytes(end - start);
 		for (uint i = start; i < end; i++) {
 			contextMessage[i - start] = dataBytes[i];
@@ -255,9 +262,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	 * Call the function to assert
 	 * the validity of several claims proofs
 	 */
-	function verifyProof(
-		Proof memory proof
-	) public returns (bool) {
+	function verifyProof(Proof memory proof) public returns (bool) {
 		// create signed claim using claimData and signature.
 		require(proof.signedClaim.signatures.length > 0, "No signatures");
 		Claims.SignedClaim memory signed = Claims.SignedClaim(
@@ -282,6 +287,17 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 			"Number of signatures not equal to number of witnesses"
 		);
 
+		// Check for duplicate witness signatures
+		for (uint256 i = 0; i < signedWitnesses.length; i++) {
+			for (uint256 j = 0; j < signedWitnesses.length; j++) {
+				if (i == j) continue;
+				require(
+					signedWitnesses[i] != signedWitnesses[j],
+					"Duplicated Signatures Found"
+				);
+			}
+		}
+
 		// Update awaited: more checks on whose signatures can be considered.
 		for (uint256 i = 0; i < signed.signatures.length; i++) {
 			bool found = false;
@@ -293,8 +309,6 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 			}
 			require(found, "Signature not appropriate");
 		}
-
-		// @TODO: verify zkproof
 	}
 
 	function createGroup(
@@ -317,7 +331,7 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	function merkelizeUser(
 		Proof memory proof,
 		uint256 _identityCommitment
-	) external noReentrant {
+	) external nonReentrant {
 		uint256 groupId = calculateGroupIdFromProvider(proof.claimInfo.provider);
 		bytes32 userParamsHash = calculateUserParamsHash(
 			proof.claimInfo.provider,
@@ -396,14 +410,6 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 
 	// internal code -----
 
-	function uintDifference(uint256 a, uint256 b) internal pure returns (uint256) {
-		if (a > b) {
-			return a - b;
-		}
-
-		return b - a;
-	}
-
 	/**
 	 * @dev Get/Calculate the groupId for a specific provider
 	 */
@@ -423,7 +429,8 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 		string memory provider,
 		string memory params
 	) internal pure returns (bytes32) {
-		bytes32 userParamsHash = keccak256(abi.encodePacked(provider, params));
+		string memory delimiter = ":";
+		bytes32 userParamsHash = keccak256(abi.encodePacked(provider, delimiter, params));
 		return userParamsHash;
 	}
 }
