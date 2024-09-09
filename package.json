@@ -1,11 +1,16 @@
 {
-  "name": "@reclaimprotocol/reclaim-contracts",
+  "name": "@reclaimprotocol/solidity-sdk",
   "version": "1.0.0",
   "files": [
     "./lib",
     "./contracts"
   ],
   "main": "./lib/index.js",
+  "license": "See License in <https://github.com/reclaimprotocol/.github/blob/main/LICENSE>",
+  "bugs": {
+		"url": "https://github.com/reclaimprotocol/reclaim-solidity-sdk/issues"
+	},
+	"homepage": "https://github.com/reclaimprotocol/reclaim-solidity-sdk/",
   "scripts": {
     "test": "hardhat test",
     "build": "hardhat compile",
