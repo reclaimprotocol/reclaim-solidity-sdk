@@ -1,4 +1,8 @@
-# Reclaim - Solidity SDK
+<div>
+    <div>
+        <img src="https://raw.githubusercontent.com/reclaimprotocol/.github/main/assets/banners/Solidity-SDK.png"  />
+    </div>
+</div>
 
 EVM smart contract that enables minting of credentials on-chain through a network of oracles and semaphore.
 
