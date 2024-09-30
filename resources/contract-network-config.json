@@ -597,6 +597,16 @@
         "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
         "explorer": ""
       }
+    },
+    "plume-devnet": {
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
+      "Reclaim": {
+        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+        "explorer": ""
+      }
     }
   }
 }

@@ -145,6 +145,10 @@ const config: HardhatUserConfig = {
     'manta-testnet': {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url: 'https://manta-testnet.calderachain.xyz/http',
+    },
+    'plume-devnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url:  'https://devnet-rpc.plumenetwork.xyz'
     }
   },
   typechain: {
