@@ -291,44 +291,20 @@
       }
     },
     "hedera-testnet": {
-      "IncrementalBinaryTree": {
-        "address": "",
-        "explorer": ""
-      },
-      "Pairing": {
-        "address": "",
-        "explorer": ""
-      },
-      "SemaphoreVerifier": {
-        "address": "",
-        "explorer": ""
-      },
-      "Semaphore": {
-        "address": "",
-        "explorer": ""
-      },
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
       "Reclaim": {
         "address": "0xaE72f9Ab6854965dFEd0fBBD5d6BA1187e512071",
         "explorer": ""
       }
     },
     "hedera-mainnet": {
-      "IncrementalBinaryTree": {
-        "address": "",
-        "explorer": ""
-      },
-      "Pairing": {
-        "address": "",
-        "explorer": ""
-      },
-      "SemaphoreVerifier": {
-        "address": "",
-        "explorer": ""
-      },
-      "Semaphore": {
-        "address": "",
-        "explorer": ""
-      },
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
       "Reclaim": {
         "address": "0x2a0a2c9f1f2cc87c6f167528cabadde25bbe170d",
         "explorer": ""
@@ -445,26 +421,11 @@
       }
     },
     "redbelly-mainnet": {
-      "IncrementalBinaryTree": {
-        "address": "",
-        "explorer": ""
-      },
-      "Pairing": {
-        "address": "",
-        "explorer": ""
-      },
-      "SemaphoreVerifier": {
-        "address": "",
-        "explorer": ""
-      },
-      "Semaphore": {
-        "address": "",
-        "explorer": ""
-      },
-      "Reclaim": {
-        "address": "",
-        "explorer": ""
-      }
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
+      "Reclaim": { "address": "", "explorer": "" }
     },
     "redbelly-devnet": {
       "IncrementalBinaryTree": {
@@ -555,26 +516,11 @@
       }
     },
     "manta-testnet": {
-      "IncrementalBinaryTree": {
-        "address": "",
-        "explorer": ""
-      },
-      "Pairing": {
-        "address": "",
-        "explorer": ""
-      },
-      "SemaphoreVerifier": {
-        "address": "",
-        "explorer": ""
-      },
-      "Semaphore": {
-        "address": "",
-        "explorer": ""
-      },
-      "Reclaim": {
-        "address": "",
-        "explorer": ""
-      }
+      "IncrementalBinaryTree": { "address": "", "explorer": "" },
+      "Pairing": { "address": "", "explorer": "" },
+      "SemaphoreVerifier": { "address": "", "explorer": "" },
+      "Semaphore": { "address": "", "explorer": "" },
+      "Reclaim": { "address": "", "explorer": "" }
     },
     "celo-alfajores": {
       "IncrementalBinaryTree": {
@@ -599,12 +545,24 @@
       }
     },
     "plume-devnet": {
-      "IncrementalBinaryTree": { "address": "", "explorer": "" },
-      "Pairing": { "address": "", "explorer": "" },
-      "SemaphoreVerifier": { "address": "", "explorer": "" },
-      "Semaphore": { "address": "", "explorer": "" },
+      "IncrementalBinaryTree": {
+        "address": "0x94521c2e16EF1F2682b59918E3b20459fDF48756",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "0x7281630E4346dd4c0B7AE3B4689c1d0102741410",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "0x4b11e09dC8b0AE67ba3795205eeAf51a3BBc19fc",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "0x97e611Fa537174D81E5FcF352Ea424c35B06D2ba",
+        "explorer": ""
+      },
       "Reclaim": {
-        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+        "address": "0xFAa4bD0487030005341cfa8e26bfBfede2B1D074",
         "explorer": ""
       }
     }
