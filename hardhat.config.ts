@@ -149,6 +149,10 @@ const config: HardhatUserConfig = {
     'plume-devnet': {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url:  'https://devnet-rpc.plumenetwork.xyz'
+    },
+    'odyssey-testnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url:  'https://odyssey.ithaca.xyz'
     }
   },
   typechain: {

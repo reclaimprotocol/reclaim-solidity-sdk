@@ -565,6 +565,28 @@
         "address": "0xFAa4bD0487030005341cfa8e26bfBfede2B1D074",
         "explorer": ""
       }
-    }
+    },
+    "odyssey-testnet": {
+        "IncrementalBinaryTree": {
+          "address": "0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C",
+          "explorer": ""
+        },
+        "Pairing": {
+          "address": "0x0E2CF8810B11c2875246d634f030897e77491680",
+          "explorer": ""
+        },
+        "SemaphoreVerifier": {
+          "address": "0x88cEd91D4966D82912774B9fdf9ca4E065881a91",
+          "explorer": ""
+        },
+        "Semaphore": {
+          "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+          "explorer": ""
+        },
+        "Reclaim": {
+          "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
+          "explorer": ""
+        }
+      }
   }
 }
