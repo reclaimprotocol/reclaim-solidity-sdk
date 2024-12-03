@@ -153,6 +153,10 @@ const config: HardhatUserConfig = {
     'odyssey-testnet': {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url:  'https://odyssey.ithaca.xyz'
+    },
+    'bsc-testnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url:  'https://bsc-testnet-rpc.publicnode.com'
     }
   },
   typechain: {

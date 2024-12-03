@@ -202,6 +202,28 @@
         "explorer": "https://bscscan.com/address/0x1bbb0896aC6F4E32a89157C73Fb830325a441cb9"
       }
     },
+    "bsc-testnet": {
+      "IncrementalBinaryTree": {
+        "address": "0x4FC5dfb65f405FEa2D5D344a00A96972C8f8feA8",
+        "explorer": "https://testnet.bscscan.com/address/0x4FC5dfb65f405FEa2D5D344a00A96972C8f8feA8"
+      },
+      "Pairing": {
+        "address": "0xb05AC87859AA48BBdEf0d3B5429eCca4Cad38336",
+        "explorer": "https://testnet.bscscan.com/address/0xb05AC87859AA48BBdEf0d3B5429eCca4Cad38336"
+      },
+      "SemaphoreVerifier": {
+        "address": "0x58fd47bB41De4cC400B564640E71b04C9D2164de",
+        "explorer": "https://testnet.bscscan.com/address/0x58fd47bB41De4cC400B564640E71b04C9D2164de"
+      },
+      "Semaphore": {
+        "address": "0x9E2C7869d074BfD6234a11a3651907c94Ca68166",
+        "explorer": "https://testnet.bscscan.com/address/0x9E2C7869d074BfD6234a11a3651907c94Ca68166"
+      },
+      "Reclaim": {
+        "address": "0x276E2ec16ef24b3D012b73bB03113259fC5a9028",
+        "explorer": "https://testnet.bscscan.com/address/0x276E2ec16ef24b3D012b73bB03113259fC5a9028"
+      }
+    },
     "base-mainnet": {
       "IncrementalBinaryTree": {
         "address": "0x8B4dd301534B4c701cf0A96e03C6d556DdE05808",
