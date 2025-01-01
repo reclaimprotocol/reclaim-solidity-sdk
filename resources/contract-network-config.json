@@ -589,26 +589,78 @@
       }
     },
     "odyssey-testnet": {
-        "IncrementalBinaryTree": {
-          "address": "0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C",
-          "explorer": ""
-        },
-        "Pairing": {
-          "address": "0x0E2CF8810B11c2875246d634f030897e77491680",
-          "explorer": ""
-        },
-        "SemaphoreVerifier": {
-          "address": "0x88cEd91D4966D82912774B9fdf9ca4E065881a91",
-          "explorer": ""
-        },
-        "Semaphore": {
-          "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
-          "explorer": ""
-        },
-        "Reclaim": {
-          "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
-          "explorer": ""
-        }
+      "IncrementalBinaryTree": {
+        "address": "0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C",
+        "explorer": ""
+      },
+      "Pairing": {
+        "address": "0x0E2CF8810B11c2875246d634f030897e77491680",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "0x88cEd91D4966D82912774B9fdf9ca4E065881a91",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "0xe79A453bD088F4A58656b315a7C1f8Ea3473CCf1",
+        "explorer": ""
       }
+    },
+    "mechain-testnet": {
+      "Pairing": {
+        "address": "0xB68aCB36334311CEc471EE2541173EDc155FdA71",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "0xFAa4bD0487030005341cfa8e26bfBfede2B1D074",
+        "explorer": ""
+      },
+      "PoseidonT3": {
+        "address": "0x9e4A9F3297c89D3F5CD64B020CE9B51953cAb456",
+        "explorer": ""
+      },
+      "IncrementalBinaryTree": {
+        "address": "0x4C3532e0b42963421d4Ac61CcFd1b0d1c9e2EFdE",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "0x1D0E9F7aC215582C4D595C90A162a432abDf9634",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "0xaA278cAFDCe8db9070c223Bb56e71ce47d8136Fd",
+        "explorer": ""
+      }
+    },
+    "bera-testnet": {
+      "Pairing": {
+        "address": "0x0E2CF8810B11c2875246d634f030897e77491680",
+        "explorer": ""
+      },
+      "SemaphoreVerifier": {
+        "address": "0x88cEd91D4966D82912774B9fdf9ca4E065881a91",
+        "explorer": ""
+      },
+      "PoseidonT3": {
+        "address": "0xa15667CC95718465838F83fA4fC9B232da6dB2BB",
+        "explorer": ""
+      },
+      "IncrementalBinaryTree": {
+        "address": "0x9bfAccAF7E28828d6ba4CE6135a552DB6429ff7C",
+        "explorer": ""
+      },
+      "Semaphore": {
+        "address": "0x93a9d327836A5279E835EF3147ac1fb54FBd726B",
+        "explorer": ""
+      },
+      "Reclaim": {
+        "address": "0xACE04E6DeB9567C1B8F37D113F2Da9E690Fc128d",
+        "explorer": ""
+      }
+    }
   }
 }

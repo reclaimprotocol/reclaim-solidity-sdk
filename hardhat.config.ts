@@ -157,6 +157,14 @@ const config: HardhatUserConfig = {
     'bsc-testnet': {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url:  'https://bsc-testnet-rpc.publicnode.com'
+    },
+    'mechain-testnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url:  'https://testnet-rpc.mechain.tech'
+    },
+    'bera-testnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url:  'https://bartio.rpc.berachain.com/'
     }
   },
   typechain: {
@@ -179,6 +187,8 @@ const config: HardhatUserConfig = {
       avalancheFujiTestnet : 'avascan',
       avalanche: 'avascan',
       'celo-alfajores': process.env.CELOSCAN_API_KEY!,
+      "mechain-testnet": "no-api-key-needed",
+      "bera-testnet": "berachain_bartio", 
     },
     customChains: [
       {
@@ -252,7 +262,23 @@ const config: HardhatUserConfig = {
             apiURL: "https://api-alfajores.celoscan.io/api",
             browserURL: "https://alfajores.celoscan.io",
         },
-      }
+      },
+      {
+        network: "mechain-testnet",
+        chainId: 5151,
+        urls: {
+          apiURL: "https://testnet-scan.mechain.tech/api",
+          browserURL: "https://testnet-scan.mechain.tech/",
+        },
+      },
+      {
+        network: "bera-testnet",
+        chainId: 80084,
+        urls: {
+          apiURL: "https://api.routescan.io/v2/network/testnet/evm/80084/etherscan",
+          browserURL: "https://bartio.beratrail.io/",
+        },
+      },
     ]
   }
 }
