@@ -165,6 +165,10 @@ const config: HardhatUserConfig = {
     'bera-testnet': {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url:  'https://bartio.rpc.berachain.com/'
+    },
+    'redbelly-mainnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url:  'https://governors.mainnet.redbelly.network'
     }
   },
   typechain: {
