@@ -169,7 +169,11 @@ const config: HardhatUserConfig = {
     'redbelly-mainnet': {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url:  'https://governors.mainnet.redbelly.network'
-    }
+    },
+    'dia-testnet': {
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      url:  'https://testnet-rpc.diadata.org'
+    },
   },
   typechain: {
     outDir: 'src/types',
