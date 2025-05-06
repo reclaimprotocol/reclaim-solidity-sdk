@@ -8,9 +8,9 @@
   "main": "./lib/index.js",
   "license": "See License in <https://github.com/reclaimprotocol/.github/blob/main/LICENSE>",
   "bugs": {
-		"url": "https://github.com/reclaimprotocol/reclaim-solidity-sdk/issues"
-	},
-	"homepage": "https://github.com/reclaimprotocol/reclaim-solidity-sdk/",
+    "url": "https://github.com/reclaimprotocol/reclaim-solidity-sdk/issues"
+  },
+  "homepage": "https://github.com/reclaimprotocol/reclaim-solidity-sdk/",
   "scripts": {
     "test": "hardhat test",
     "build": "hardhat compile",
@@ -54,6 +54,8 @@
     "uuid": "^9.0.0"
   },
   "dependencies": {
+    "@erc725/erc725.js": "^0.27.2",
+    "@lukso/lsp-smart-contracts": "^0.16.3",
     "@okxweb3/hardhat-explorer-verify": "^1.6.4",
     "@openzeppelin/contracts": "^4.9.2",
     "@semaphore-protocol/contracts": "^3.11.1",

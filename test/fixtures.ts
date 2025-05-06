@@ -24,8 +24,15 @@ const MOCK_HOST_PREFIX = 'localhost:555'
 export async function deployFixture() {
   let owner: SignerWithAddress = await ethers.getSigners()[0]
   const { semaphore } = await run('deploy:semaphore', { logs: false })
+
+  // Deploy ProofStorage contract
+  const ProofStorage = await ethers.getContractFactory("ProofStorage");
+  const proofStorage = await ProofStorage.deploy(owner.address);
+  await proofStorage.deployed();
+
   let contract: Reclaim = await deployReclaimContract(
     semaphore,
+    proofStorage,
     ethers,
     upgrades,
     owner

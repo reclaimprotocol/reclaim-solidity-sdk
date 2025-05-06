@@ -18,56 +18,25 @@ task('deploy').setAction(async ({}, { ethers, network, upgrades }) => {
   } = // @ts-expect-error events
     (await run('deploy:semaphore')) as ReturnObjectSemaphoreDeployTask
 
-  const ReclaimFactory = await ethers.getContractFactory('Reclaim')
-  const Reclaim = await upgrades.deployProxy(
-    ReclaimFactory,
-    [semaphore.address],
-    {
-      kind: 'uups',
-      initializer: 'initialize'
-    }
-  )
-  const tx = await Reclaim.deployed()
-  const res = await tx.deployTransaction.wait()
+  const [deployer] = await ethers.getSigners();
 
-  // @ts-expect-error events
-  console.log('Reclaim Implementation deployed to:', res.events[0].args[0])
-  console.log('Reclaim Proxy deployed to: ', Reclaim.address)
+  // Deploy ProofStorage contract
+  const ProofStorage = await ethers.getContractFactory("ProofStorage");
+  const proofStorage = await ProofStorage.deploy(deployer.address);
+  await proofStorage.deployed();
 
-  
-  networkDetails['IncrementalBinaryTree'] = {
-    address: incrementalBinaryTreeAddress,
-    explorer: ''
-  }
+  console.log('ProofStorage deployed to:', proofStorage.address)
 
-  networkDetails['Pairing'] = {
-    address: pairingAddress,
-    explorer: ''
-  }
-  networkDetails['SemaphoreVerifier'] = {
-    address: semaphoreVerifierAddress,
-    explorer: ''
-  }
-  networkDetails['Semaphore'] = {
-    address: semaphore.address,
-    explorer: ''
-  }
+  const Reclaim = await ethers.getContractFactory('Reclaim')
+  const reclaim = await Reclaim.deploy(semaphore.address, proofStorage.address);
+  await reclaim.deployed();
 
-  networkDetails['Reclaim'] = {
-    address: Reclaim.address,
-    explorer: ''
-  }
-  content['networks'][network.name] = networkDetails
-
-  fs.writeFileSync(
-    './resources/contract-network-config.json',
-    JSON.stringify(content)
-  )
-
+  console.log('Reclaim Proxy deployed to: ', reclaim.address)
 
   await verify(incrementalBinaryTreeAddress, network.name)
   await verify(pairingAddress, network.name)
   await verify(semaphoreVerifierAddress, network.name)
   await verify(semaphore.address, network.name, [semaphoreVerifierAddress])
-  await verify(Reclaim.address, network.name)
+  await verify(reclaim.address, network.name, [semaphore.address, proofStorage.address])
+  await verify(proofStorage.address, network.name,[deployer.address])
 })

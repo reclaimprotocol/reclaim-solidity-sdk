@@ -3,12 +3,13 @@ pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "./lib/SemaphoreInterface.sol";
 import "./lib/Claims.sol";
 import "./lib/Random.sol";
 import "./lib/StringUtils.sol";
 import "./lib/BytesUtils.sol";
+
+import "@lukso/lsp-smart-contracts/contracts/LSP0ERC725Account/LSP0ERC725Account.sol";
 
 // import "hardhat/console.sol";
 
@@ -16,9 +17,44 @@ error Reclaim__GroupAlreadyExists();
 error Reclaim__UserAlreadyMerkelized();
 
 /**
+ * @title IProofStorage
+ * @dev Interface for the ProofStorage contract that allows storing and retrieving proofs.
+ *      A proof is represented by a claim identifier and the corresponding proof data.
+ */
+interface IProofStorage {
+
+    /**
+     * @dev Structure to store proof details.
+     * @param claimIdentifier A unique identifier for the claim.
+     * @param data The proof data associated with the claim.
+     */
+    struct Proof {
+        bytes32 claimIdentifier;  // Unique identifier for the claim
+        bytes data;               // Data representing the proof for the claim
+    }
+
+    /**
+     * @dev Stores a proof in the contract.
+     * @param claimIdentifier The unique identifier for the claim.
+     * @param data The proof data to be stored.
+     * @notice This function is intended to be called by external contracts or addresses
+     *         to store proofs in the implementing contract.
+     */
+    function storeProof(bytes32 claimIdentifier, bytes memory data) external;
+
+    /**
+     * @dev Retrieves a stored proof by its claim identifier.
+     * @param claimIdentifier The unique identifier for the claim.
+     * @return The proof associated with the given claim identifier.
+     * @notice This function allows anyone to retrieve the proof data associated with a claim identifier.
+     */
+    function getProof(bytes32 claimIdentifier) external view returns (Proof memory);
+}
+
+/**
  * Reclaim Beacon contract
  */
-contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
+contract Reclaim is Initializable, UUPSUpgradeable {
 	struct Witness {
 		/** ETH address of the witness */
 		address addr;
@@ -67,6 +103,11 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	uint32 public currentEpoch;
 
 	/**
+	 * current owner.
+	 * */
+	address public owner;
+
+	/**
 	 * created groups mapping
 	 * map groupId with true if already created
 	 * */
@@ -95,16 +136,27 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 	}
 
 	/**
+	 * Address of the ProofStorage contract 
+	 * */
+    address public proofStorage;
+
+	/**
 	 * @notice Calls initialize on the base contracts
 	 *
 	 * @dev This acts as a constructor for the upgradeable proxy contract
 	 */
-	function initialize(address _semaphoreAddress) external initializer {
-		__Ownable_init();
+	constructor(address _semaphoreAddress, address _proofStorage) {
 		epochDurationS = 1 days;
 		currentEpoch = 0;
 		semaphoreAddress = _semaphoreAddress;
+		proofStorage = _proofStorage;
+		owner = msg.sender;
 	}
+
+	modifier onlyOwner() {
+        require(owner == msg.sender, "Only Owner");
+        _;
+    }
 
 	/**
 	 * @notice Override of UUPSUpgradeable virtual function
@@ -309,6 +361,9 @@ contract Reclaim is Initializable, UUPSUpgradeable, OwnableUpgradeable {
 			}
 			require(found, "Signature not appropriate");
 		}
+
+		// Storing the proof in the ProofStorage contract after verification
+        IProofStorage(proofStorage).storeProof(proof.signedClaim.claim.identifier, abi.encode(proof));
 	}
 
 	function createGroup(

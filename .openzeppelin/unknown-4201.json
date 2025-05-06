@@ -1,0 +1,547 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x361D756ca71825fc769dec77F540d0a82eA64155",
+      "txHash": "0xa615f2dd897323040488b78c86c1a489b13c44a3ead47335aab0b3bb531f5a74",
+      "kind": "uups"
+    },
+    {
+      "address": "0x15d267946ae3134429fC7b5895B91FE17935D042",
+      "txHash": "0x20cd27c05b69dd4c60a1c870d50c82ac97eaa0724403d300b86c6c87f16be1fc",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "c713cc51bc2baa651b3ae0182850fa98a596b577f04e3118841580ebf9fe3e5f": {
+      "address": "0xD594971cea3fb43Dd3d2De87C216ac2aCE320fc2",
+      "txHash": "0x7f4b5309f34279889e889119a7eeff709db61cd38083ad321a542e282f3f283b",
+      "layout": {
+        "solcVersion": "0.8.5",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:169"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:111"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:40"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "epochs",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_array(t_struct(Epoch)8765_storage)dyn_storage",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:88"
+          },
+          {
+            "label": "semaphoreAddress",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_address",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:91"
+          },
+          {
+            "label": "epochDurationS",
+            "offset": 20,
+            "slot": "202",
+            "type": "t_uint32",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:98"
+          },
+          {
+            "label": "currentEpoch",
+            "offset": 24,
+            "slot": "202",
+            "type": "t_uint32",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:104"
+          },
+          {
+            "label": "createdGroups",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:110"
+          },
+          {
+            "label": "isUserMerkelized",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_bool))",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:112"
+          },
+          {
+            "label": "locked",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_bool",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:120"
+          },
+          {
+            "label": "merkelizedUserParams",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_mapping(t_bytes32,t_bool)",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:122"
+          },
+          {
+            "label": "dappIdToExternalNullifier",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:124"
+          },
+          {
+            "label": "proofStorage",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_contract(IProofStorage)8733",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:137"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Epoch)8765_storage)dyn_storage": {
+            "label": "struct Reclaim.Epoch[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Witness)8747_storage)dyn_storage": {
+            "label": "struct Reclaim.Witness[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IProofStorage)8733": {
+            "label": "contract IProofStorage",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_bytes32,t_bool)": {
+            "label": "mapping(bytes32 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_bool)": {
+            "label": "mapping(string => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_bool))": {
+            "label": "mapping(uint256 => mapping(string => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Epoch)8765_storage": {
+            "label": "struct Reclaim.Epoch",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint32",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timestampStart",
+                "type": "t_uint32",
+                "offset": 4,
+                "slot": "0"
+              },
+              {
+                "label": "timestampEnd",
+                "type": "t_uint32",
+                "offset": 8,
+                "slot": "0"
+              },
+              {
+                "label": "witnesses",
+                "type": "t_array(t_struct(Witness)8747_storage)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minimumWitnessesForClaimCreation",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(Witness)8747_storage": {
+            "label": "struct Reclaim.Witness",
+            "members": [
+              {
+                "label": "addr",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "host",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {}
+      }
+    },
+    "0ff036122b10ace462c565626b37fcff0d2d2701e53ccf976a1256f0a2a691de": {
+      "address": "0x48F90603202B393bF1e3f430fE5d75a194454FfB",
+      "txHash": "0x3b250ecd271d949b9a1cb6dfffcc141cc84c1c614241cc00fd4ed689100d2a18",
+      "layout": {
+        "solcVersion": "0.8.5",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:169"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:111"
+          },
+          {
+            "label": "epochs",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_struct(Epoch)8578_storage)dyn_storage",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:87"
+          },
+          {
+            "label": "semaphoreAddress",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:90"
+          },
+          {
+            "label": "epochDurationS",
+            "offset": 20,
+            "slot": "102",
+            "type": "t_uint32",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:97"
+          },
+          {
+            "label": "currentEpoch",
+            "offset": 24,
+            "slot": "102",
+            "type": "t_uint32",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:103"
+          },
+          {
+            "label": "owner",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:108"
+          },
+          {
+            "label": "createdGroups",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:114"
+          },
+          {
+            "label": "isUserMerkelized",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_bool))",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:116"
+          },
+          {
+            "label": "locked",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_bool",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:124"
+          },
+          {
+            "label": "merkelizedUserParams",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_mapping(t_bytes32,t_bool)",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:126"
+          },
+          {
+            "label": "dappIdToExternalNullifier",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_mapping(t_bytes32,t_uint256)",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:128"
+          },
+          {
+            "label": "proofStorage",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_contract(IProofStorage)8548",
+            "contract": "Reclaim",
+            "src": "contracts/Reclaim.sol:141"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Epoch)8578_storage)dyn_storage": {
+            "label": "struct Reclaim.Epoch[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Witness)8560_storage)dyn_storage": {
+            "label": "struct Reclaim.Witness[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IProofStorage)8548": {
+            "label": "contract IProofStorage",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_bytes32,t_bool)": {
+            "label": "mapping(bytes32 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_bool)": {
+            "label": "mapping(string => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_string_memory_ptr,t_bool))": {
+            "label": "mapping(uint256 => mapping(string => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Epoch)8578_storage": {
+            "label": "struct Reclaim.Epoch",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint32",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "timestampStart",
+                "type": "t_uint32",
+                "offset": 4,
+                "slot": "0"
+              },
+              {
+                "label": "timestampEnd",
+                "type": "t_uint32",
+                "offset": 8,
+                "slot": "0"
+              },
+              {
+                "label": "witnesses",
+                "type": "t_array(t_struct(Witness)8560_storage)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "minimumWitnessesForClaimCreation",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(Witness)8560_storage": {
+            "label": "struct Reclaim.Witness",
+            "members": [
+              {
+                "label": "addr",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "host",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {}
+      }
+    }
+  }
+}
