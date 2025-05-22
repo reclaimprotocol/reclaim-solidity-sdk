@@ -56,12 +56,12 @@
   "dependencies": {
     "@okxweb3/hardhat-explorer-verify": "^1.6.4",
     "@openzeppelin/contracts": "^4.9.2",
-    "@semaphore-protocol/contracts": "^3.11.1",
-    "@semaphore-protocol/data": "^3.11.1",
-    "@semaphore-protocol/group": "^3.11.1",
-    "@semaphore-protocol/hardhat": "^3.11.1",
-    "@semaphore-protocol/identity": "^3.11.1",
-    "@semaphore-protocol/proof": "^3.11.1",
+    "@semaphore-protocol/contracts": "^4.11.1",
+    "@semaphore-protocol/data": "^4.11.1",
+    "@semaphore-protocol/group": "^4.11.1",
+    "@semaphore-protocol/hardhat": "^4.11.1",
+    "@semaphore-protocol/identity": "^4.11.1",
+    "@semaphore-protocol/proof": "^4.11.1",
     "alchemy-sdk": "^2.9.2",
     "operator-filter-registry": "^1.4.2"
   },
