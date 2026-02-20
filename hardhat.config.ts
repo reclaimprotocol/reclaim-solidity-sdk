@@ -125,6 +125,11 @@ const config: HardhatUserConfig = {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       chainId: 8453
     },
+    'bsc-mainnet': {
+      url: "https://bsc-rpc.publicnode.com",
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
+      chainId: 56
+    },
     'redbelly-devnet': {
       accounts: PRIVATE_KEY ? [PRIVATE_KEY]: [],
       url: 'https://rbn-gcp-australia-southeast1-a-0-b-v2.devnet.redbelly.network:8545',
