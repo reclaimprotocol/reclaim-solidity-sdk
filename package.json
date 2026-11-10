@@ -68,6 +68,9 @@
   "overrides": {
     "flat": "$flat",
     "minimatch": "$minimatch",
-    "uuid": "$uuid"
+    "uuid": "$uuid",
+    "ws@8": "^8.21.0",
+    "bn.js@4": "^4.12.3",
+    "@openzeppelin/contracts": "$@openzeppelin/contracts"
   }
 }
